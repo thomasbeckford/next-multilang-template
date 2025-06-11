@@ -5,6 +5,8 @@ import { ThemeProvider } from '@/providers/ThemeProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import { Container } from '@/components/ui/container'
+import Navbar from '@/components/Navbar'
+import MobileNav from '@/components/MobileNav'
 import '@/app/globals.css'
 
 export default async function LocaleLayout({
@@ -30,14 +32,21 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Container>
-              <div className="flex justify-end gap-2 items-center align-center p-2">
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-              </div>
-            </Container>
+            <div className="flex flex-col gap-12">
+              <Container className="flex justify-between items-center w-full min-h-16 md:min-h-24">
+                <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
+                  My Logo
+                </h1>
+                <MobileNav />
+                <Navbar />
+                <div className="flex gap-2">
+                  <LanguageSwitcher />
+                  <ThemeSwitcher />
+                </div>
+              </Container>
 
-            {children}
+              {children}
+            </div>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

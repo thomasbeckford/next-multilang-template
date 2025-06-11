@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
 import { type Metadata } from 'next'
@@ -19,8 +18,6 @@ export default function HomePage() {
   return (
     <section id="home">
       <Container variant="constrainedPadded" className="animate-in fade-in">
-        <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
-
         <h2 className="text-3xl font-bold mb-10">✨ Features</h2>
         <ul className="space-y-6">
           {features.map(({ title, description }) => (
@@ -30,12 +27,6 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-
-        <div className="mt-10">
-          <Link href="/about" className="underline text-primary">
-            {t('about')}
-          </Link>
-        </div>
       </Container>
     </section>
   )
