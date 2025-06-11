@@ -17,8 +17,8 @@ export default function HomePage() {
   const features = t.raw('features') as { title: string; description: string }[]
 
   return (
-    <section className="">
-      <Container variant="constrainedPadded">
+    <section id="home">
+      <Container variant="constrainedPadded" className="animate-in fade-in">
         <h1 className="text-4xl font-bold mb-8">{t('title')}</h1>
 
         <h2 className="text-3xl font-bold mb-10">✨ Features</h2>
