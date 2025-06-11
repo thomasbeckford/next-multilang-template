@@ -1,4 +1,34 @@
 {
   "title": "Hello world!",
-  "about": "Go to the about page"
+  "about": "Go to the about page",
+  "features": [
+    {
+      "title": "🌍 Internationalization",
+      "description": "Powered by next-intl, using clean and scalable JSON-based translations"
+    },
+    {
+      "title": "🧠 Automatic language detection",
+      "description": "Via browser preferences (Accept-Language header)"
+    },
+    {
+      "title": "🚀 Locale-aware routing",
+      "description": "Optional prefixes like /en or /es, handled transparently by middleware"
+    },
+    {
+      "title": "🌐 Language switcher",
+      "description": "Users can manually change language and persist their preference via cookie"
+    },
+    {
+      "title": "🗂 Modular structure",
+      "description": "Namespaces per page/section for cleaner translation files"
+    },
+    {
+      "title": "🎨 Tailwind + shadcn/ui",
+      "description": "Elegant UI components with utility-first styling"
+    },
+    {
+      "title": "🌙 Theme switcher",
+      "description": "Manual theme toggle with cookie-based persistence for dark/light mode"
+    }
+  ]
 }

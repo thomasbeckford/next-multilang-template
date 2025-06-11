@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { Container } from '@/components/ui/container'
 
 export default function AboutPage() {
   const t = useTranslations('About')
@@ -12,12 +13,12 @@ export default function AboutPage() {
   }
 
   return (
-    <div>
+    <Container>
       <section>
         <h1>{t('title', { firstName: user.firstName })}</h1>
         <p>{t('membership', { memberSince: user.memberSince })}</p>
         <p>{t('followers', { count: user.numFollowers })}</p>
       </section>
-    </div>
+    </Container>
   )
 }

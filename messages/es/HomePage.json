@@ -1,4 +1,34 @@
 {
-  "title": "Hola mundo!",
-  "about": "Ir a la página de acerca de"
+  "title": "¡Hola mundo!",
+  "about": "Ir a la página sobre nosotros",
+  "features": [
+    {
+      "title": "🌍 Internacionalización",
+      "description": "Impulsada por next-intl, con traducciones limpias y escalables basadas en JSON"
+    },
+    {
+      "title": "🧠 Detección automática de idioma",
+      "description": "Basada en las preferencias del navegador (header Accept-Language)"
+    },
+    {
+      "title": "🚀 Enrutamiento según idioma",
+      "description": "Prefijos opcionales como /en o /es, manejados automáticamente por middleware"
+    },
+    {
+      "title": "🌐 Selector de idioma",
+      "description": "El usuario puede cambiar manualmente el idioma y guardamos su preferencia en una cookie"
+    },
+    {
+      "title": "🗂 Estructura modular",
+      "description": "Traducciones separadas por sección/página para mantener el orden"
+    },
+    {
+      "title": "🎨 Tailwind + shadcn/ui",
+      "description": "Componentes UI elegantes con utilidades de estilo"
+    },
+    {
+      "title": "🌙 Selector de tema",
+      "description": "Cambio de tema manual, con persistencia mediante cookies"
+    }
+  ]
 }
