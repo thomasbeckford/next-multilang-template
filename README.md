@@ -1,13 +1,15 @@
-🌍 Internationalization with next-intl (JSON-based)
+✨ Features
 
-🧠 Middleware with automatic language detection (Accept-Language)
 
-🚀 Locale-aware routing with localePrefix: 'as-needed'
+🌍 Internationalization powered by next-intl, using clean and scalable JSON-based translations
 
-🌐 Language switcher that updates the URL and cookie
+🧠 Automatic language detection via browser preferences (Accept-Language header)
 
-🔒 Example of forcing a specific page to render in English
+🚀 Locale-aware routing with optional prefixes like /en or /es, handled transparently by middleware
 
-🗂 Clean structure: translations per namespace and locale
+🌐 Language switcher to let users manually change language and persist their preference via cookie
 
-✅ SSR-ready and compatible with Vercel deployment
+🔒 Force specific pages to always render in a chosen language (e.g., English-only content)
+
+🗂 Modular translation structure using namespaces per page/section
+
