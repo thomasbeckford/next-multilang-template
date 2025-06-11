@@ -29,6 +29,10 @@
     {
       "title": "🌙 Selector de tema",
       "description": "Cambio de tema manual, con persistencia mediante cookies"
+    },
+    {
+      "title": "🏷️ SEO Meta tags",
+      "description": "Generados por la función getMetadata"
     }
   ]
 }

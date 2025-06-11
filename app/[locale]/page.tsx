@@ -1,6 +1,16 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { Container } from '@/components/ui/container'
+import getMetadata from '@/lib/seo'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = getMetadata({
+  title: 'Home | Next Multilang Template',
+  description:
+    'This is the homepage of Next Multilang Template, a modern multi-language starter.',
+  url: 'https://next-multilang-template.vercel.app',
+  image: 'https://next-multilang-template.vercel.app/og-image.jpg',
+})
 
 export default function HomePage() {
   const t = useTranslations('HomePage')
