@@ -11,31 +11,18 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
-
-const links = [
-  {
-    href: '/',
-    label: 'Home',
-    description: 'The home page, a modern multi-language starter.',
-  },
-  {
-    href: '/about',
-    label: 'About',
-    description: 'The about page, a modern multi-language starter.',
-  },
-  {
-    href: '/contact',
-    label: 'Contact',
-    description: 'The contact page, a modern multi-language starter.',
-  },
-]
+import useLinks from '@/hooks/useLinks'
+import { useTranslations } from 'next-intl'
 
 export default function Navbar() {
+  const t = useTranslations('Navbar')
+  const links = useLinks()
+
   return (
     <NavigationMenu viewport={false} className="hidden md:flex ">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+          <NavigationMenuTrigger>{links[0].label}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -53,10 +40,10 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href={links[1].href} title="About">
+              <ListItem href={links[1].href} title={links[1].label}>
                 {links[1].description}
               </ListItem>
-              <ListItem href={links[2].href} title="Contact">
+              <ListItem href={links[2].href} title={links[2].label}>
                 {links[2].description}
               </ListItem>
             </ul>
@@ -64,7 +51,7 @@ export default function Navbar() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuTrigger>More</NavigationMenuTrigger>
+          <NavigationMenuTrigger> {t('more')}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>

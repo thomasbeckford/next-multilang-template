@@ -32,8 +32,8 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="flex flex-col gap-12">
-              <Container className="flex justify-between items-center w-full min-h-16 md:min-h-24">
+            <div className="flex flex-col gap-2">
+              <Container className="flex justify-between items-center w-full py-6 ">
                 <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
                   My Logo
                 </h1>

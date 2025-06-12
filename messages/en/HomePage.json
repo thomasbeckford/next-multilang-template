@@ -1,7 +1,8 @@
 {
   "title": "Hello world!",
   "about": "Go to the about page",
-  "features": [
+  "features": "Features",
+  "featuresList": [
     {
       "title": "🌍 Internationalization",
       "description": "Powered by next-intl, using clean and scalable JSON-based translations"

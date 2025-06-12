@@ -25,6 +25,8 @@ export interface ContainerProps
   asChild?: boolean
 }
 
+const defaultContainerStyle = 'py-12 rounded-lg last:mb-12'
+
 const Container: React.FC<ContainerProps> = ({
   asChild,
   className,
@@ -33,7 +35,11 @@ const Container: React.FC<ContainerProps> = ({
   ...props
 }) => {
   const Comp = asChild ? React.Fragment : 'div'
-  const containerClasses = cn(containerVariants({ variant }), className)
+  const containerClasses = cn(
+    containerVariants({ variant }),
+    defaultContainerStyle,
+    className
+  )
 
   return (
     <Comp className={containerClasses} {...props}>

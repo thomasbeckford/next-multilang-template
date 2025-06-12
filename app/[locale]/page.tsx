@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
 import { type Metadata } from 'next'
+import VideoBackground from '@/components/VideoBackground'
 
 export const metadata: Metadata = getMetadata({
   title: 'Home | Next Multilang Template',
@@ -13,16 +14,54 @@ export const metadata: Metadata = getMetadata({
 
 export default function HomePage() {
   const t = useTranslations('HomePage')
-  const features = t.raw('features') as { title: string; description: string }[]
+  const features = t.raw('featuresList') as {
+    title: string
+    description: string
+  }[]
 
   return (
-    <section id="home">
-      <Container variant="constrainedPadded" className="animate-in fade-in">
-        <h2 className="text-3xl font-bold mb-10">✨ Features</h2>
+    <section id="home" className="space-y-20">
+      <VideoBackground />
+
+      <Container
+        variant="constrainedPadded"
+        className="animate-in fade-in bg-gray-800 "
+      >
+        <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
         <ul className="space-y-6">
           {features.map(({ title, description }) => (
             <li key={title}>
-              <h3 className="text-lg font-medium">{title}</h3>
+              <h3 className="text-lg font-medium ">{title}</h3>
+              <p className="text-muted-foreground">{description}</p>
+            </li>
+          ))}
+        </ul>
+      </Container>
+
+      <Container
+        variant="breakpointPadded"
+        className="animate-in fade-in bg-gray-700"
+      >
+        <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
+        <ul className="space-y-6">
+          {features.map(({ title, description }) => (
+            <li key={title}>
+              <h3 className="text-lg font-medium ">{title}</h3>
+              <p className="text-muted-foreground">{description}</p>
+            </li>
+          ))}
+        </ul>
+      </Container>
+
+      <Container
+        variant="breakpointPadded"
+        className="animate-in fade-in bg-gray-600"
+      >
+        <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
+        <ul className="space-y-6">
+          {features.map(({ title, description }) => (
+            <li key={title}>
+              <h3 className="text-lg font-medium ">{title}</h3>
               <p className="text-muted-foreground">{description}</p>
             </li>
           ))}

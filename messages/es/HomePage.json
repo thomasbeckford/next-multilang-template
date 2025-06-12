@@ -1,7 +1,8 @@
 {
   "title": "¡Hola mundo!",
   "about": "Ir a la página sobre nosotros",
-  "features": [
+  "features": "Características",
+  "featuresList": [
     {
       "title": "🌍 Internacionalización",
       "description": "Impulsada por next-intl, con traducciones limpias y escalables basadas en JSON"
