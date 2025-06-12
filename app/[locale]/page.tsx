@@ -25,7 +25,7 @@ export default function HomePage() {
 
       <Container
         variant="constrainedPadded"
-        className="animate-in fade-in bg-gray-800 "
+        className="animate-in fade-in bg-secondary text-secondary-foreground"
       >
         <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
         <ul className="space-y-6">
@@ -40,7 +40,7 @@ export default function HomePage() {
 
       <Container
         variant="breakpointPadded"
-        className="animate-in fade-in bg-gray-700"
+        className="animate-in fade-in bg-secondary text-secondary-foreground"
       >
         <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
         <ul className="space-y-6">
@@ -55,7 +55,7 @@ export default function HomePage() {
 
       <Container
         variant="breakpointPadded"
-        className="animate-in fade-in bg-gray-600"
+        className="animate-in fade-in bg-secondary text-secondary-foreground"
       >
         <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
         <ul className="space-y-6">

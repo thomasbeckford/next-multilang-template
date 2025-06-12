@@ -19,7 +19,7 @@ const VideoBackground = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="flex items-center justify-center h-full text-white z-10 relative">
+      <div className="flex items-center justify-center h-full text-foreground z-10 relative">
         <div className="text-center">
           <h1 className="text-5xl font-bold mb-4">{t('title')}</h1>
           <p className="text-xl">{t('subtitle')}</p>
