@@ -1,11 +1,9 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import useLinks from '@/hooks/useLinks'
 
 export default function Navbar() {
-  const t = useTranslations('Navbar')
   const links = useLinks()
 
   return (
