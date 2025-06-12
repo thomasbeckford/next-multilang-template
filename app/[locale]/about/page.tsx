@@ -16,6 +16,7 @@ export default function AboutPage() {
 
   const user = {
     firstName: 'John',
+    lastName: 'Doe',
     memberSince: new Date('2020-01-01'),
     numFollowers: 10,
   }
@@ -26,6 +27,8 @@ export default function AboutPage() {
         <h1>{t('title', { firstName: user.firstName })}</h1>
         <p>{t('membership', { memberSince: user.memberSince })}</p>
         <p>{t('followers', { count: user.numFollowers })}</p>
+
+        <p>{t('description')}</p>
       </Container>
     </section>
   )
