@@ -35,7 +35,7 @@ export default async function LocaleLayout({
             <div className="flex flex-col gap-2">
               <Container className="flex justify-between items-center w-full py-6 ">
                 <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
-                  My Logo
+                  Thomas
                 </h1>
                 <MobileNav />
                 <Navbar />
