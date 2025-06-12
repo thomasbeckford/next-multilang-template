@@ -12,7 +12,10 @@ const VideoBackground = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover object-top z-[-1] opacity-60"
       >
-        <source src="/moto.mp4" type="video/mp4" />
+        <source
+          src="https://videos.pexels.com/video-files/5527786/5527786-uhd_2560_1440_25fps.mp4"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 
