@@ -2,10 +2,11 @@
 import { motion } from 'framer-motion'
 import VideoBlock from './VideoBlock'
 import Image from 'next/image'
+import { MotionValue } from 'framer-motion'
 
 type Props = {
   includeVideo?: boolean
-  opacity: any
+  opacity: MotionValue<number>
   images: string[] // debe contener 3 elementos
 }
 
