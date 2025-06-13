@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 
 const wordsLine1 = [
   'frontend',
@@ -45,7 +45,7 @@ const Marquee = () => {
   const x1 = useTransform(scrollYProgress, [0, 1], ['0%', '-100%'])
   const x2 = useTransform(scrollYProgress, [0, 1], ['-100%', '0%'])
 
-  const renderLine = (words: string[], x: any) => {
+  const renderLine = (words: string[], x: MotionValue<string>) => {
     let realWordCount = 0
 
     return (
