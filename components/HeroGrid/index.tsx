@@ -14,9 +14,9 @@ export default function HeroGrid() {
     offset: ['start end', 'end end'],
   })
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 4])
-  const rotate = useTransform(scrollYProgress, [0, 1], [-10, 0])
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 0.6])
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 4.1])
+  const rotate = useTransform(scrollYProgress, [0, 1], [-20, 0])
+  const opacity = useTransform(scrollYProgress, [0.1, 0.4], [0.1, 0.4])
 
   return (
     <section
