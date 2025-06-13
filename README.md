@@ -56,12 +56,14 @@ pnpm dev
 
 ## 📁 Structure Highlights
 
+```
 ├── app/
 ├── components/
 ├── i18n/
 ├── styles/
 ├── public/
 └── ...
+```
 
 ## 👨‍💻 Created by
 
