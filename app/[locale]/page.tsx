@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl'
-import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
 import { type Metadata } from 'next'
-import VideoBackground from '@/components/VideoBackground'
+import HeroGrid from '@/components/HeroGrid'
+import { Container } from '@/components/ui/container'
 
 export const metadata: Metadata = getMetadata({
   title: 'Home | Next Multilang Template',
@@ -20,9 +20,8 @@ export default function HomePage() {
   }[]
 
   return (
-    <section id="home" className="space-y-20">
-      <VideoBackground />
-
+    <section id="home" className="space-y-20  ">
+      <HeroGrid />
       <Container
         variant="constrainedPadded"
         className="animate-in fade-in bg-secondary text-secondary-foreground"

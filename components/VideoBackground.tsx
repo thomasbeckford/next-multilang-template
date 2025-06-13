@@ -4,13 +4,13 @@ const VideoBackground = () => {
   const t = useTranslations('VideoBackground')
 
   return (
-    <div className="relative w-full h-[600px] overflow-hidden">
+    <div className="relative w-full h-[300px] overflow-hidden">
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover object-top z-[-1] opacity-60"
+        className="absolute top-0 left-0 w-full h-full object-cover object-top z-[-1] "
       >
         <source
           src="https://videos.pexels.com/video-files/5527786/5527786-uhd_2560_1440_25fps.mp4"
@@ -18,13 +18,6 @@ const VideoBackground = () => {
         />
         Your browser does not support the video tag.
       </video>
-
-      <div className="flex items-center justify-center h-full text-foreground z-10 relative">
-        <div className="text-center">
-          <h1 className="text-5xl font-bold mb-4">{t('title')}</h1>
-          <p className="text-xl">{t('subtitle')}</p>
-        </div>
-      </div>
     </div>
   )
 }

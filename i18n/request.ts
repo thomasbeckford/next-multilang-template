@@ -18,6 +18,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       VideoBackground: (
         await import(`../messages/${locale}/VideoBackground.json`)
       ).default,
+      HeroGrid: (await import(`../messages/${locale}/HeroGrid.json`)).default,
     },
   }
 })

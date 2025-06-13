@@ -4,7 +4,6 @@ import { routing } from '@/i18n/routing'
 import { ThemeProvider } from '@/providers/ThemeProvider'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
-import { Container } from '@/components/ui/container'
 import Navbar from '@/components/Navbar'
 import MobileNav from '@/components/MobileNav'
 import '@/app/globals.css'
@@ -32,8 +31,8 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="flex flex-col gap-2">
-              <Container className="flex justify-between items-center w-full py-6 ">
+            <div className="flex flex-col  ">
+              <div className="flex justify-between items-center w-full md:p-4 p-2">
                 <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
                   Thomas
                 </h1>
@@ -43,9 +42,8 @@ export default async function LocaleLayout({
                   <LanguageSwitcher />
                   <ThemeSwitcher />
                 </div>
-              </Container>
-
-              {children}
+              </div>
+              <div>{children}</div>
             </div>
           </ThemeProvider>
         </NextIntlClientProvider>

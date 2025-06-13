@@ -7,7 +7,7 @@ export default function Navbar() {
   const links = useLinks()
 
   return (
-    <header className="hidden md:flex items-center justify-between px-6 py-4 border-b bg-background">
+    <header className="hidden md:flex items-center justify-between border-b bg-transparent">
       <div className="flex items-center gap-8">
         <Link href="/" className="text-xl font-bold">
           Logo
