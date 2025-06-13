@@ -8,31 +8,31 @@ Includes support for **internationalization**, **dark/light themes**, **dynamic 
 
 ## ✨ Features
 
-- 🌍 **Internationalization**  
+- 🌍 **Internationalization**
   Powered by [`next-intl`](https://github.com/amannn/next-intl), using clean and scalable JSON-based translations.
 
-- 🧠 **Automatic language detection**  
+- 🧠 **Automatic language detection**
   Detects user language via browser settings (`Accept-Language` header).
 
-- 🚀 **Locale-aware routing**  
+- 🚀 **Locale-aware routing**
   Optional URL prefixes like `/en` or `/es`, handled transparently by middleware.
 
-- 🌐 **Language switcher**  
+- 🌐 **Language switcher**
   Manual language selection with cookie-based persistence.
 
-- 🗂 **Modular structure**  
+- 🗂 **Modular structure**
   Organized namespaces per page/section for cleaner translation files.
 
-- 🎨 **Tailwind CSS + Shadcn UI**  
+- 🎨 **Tailwind CSS + Shadcn UI**
   Beautiful, accessible components styled with utility-first Tailwind CSS.
 
-- 🌙 **Theme switcher**  
+- 🌙 **Theme switcher**
   Dark/Light mode toggle with cookie-based persistence.
 
-- 🏷️ **SEO meta tags**  
+- 🏷️ **SEO meta tags**
   Dynamically generated using a `getMetadata()` function.
 
-- 🎞️ **Smooth animations**  
+- 🎞️ **Smooth animations**
   Scroll and interaction-based animations powered by [Framer Motion](https://www.framer.com/motion/).
 
 ---
@@ -52,3 +52,22 @@ Includes support for **internationalization**, **dark/light themes**, **dynamic 
 ```bash
 pnpm install
 pnpm dev
+```
+
+## 📁 Structure Highlights
+
+├── app/
+├── components/
+├── i18n/
+├── styles/
+├── public/
+└── ...
+
+## 👨‍💻 Created by
+
+Made with ❤️ by Thomas Beckford
+If you find this useful, feel free to star the repo or reach out!
+
+## 📝 License
+
+MIT
