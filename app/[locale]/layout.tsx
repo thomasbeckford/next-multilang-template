@@ -6,6 +6,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import Navbar from '@/components/Navbar'
 import MobileNav from '@/components/MobileNav'
+import TrackScroll from '@/components/TrackScroll'
 import '@/app/globals.css'
 
 export default async function LocaleLayout({
@@ -24,6 +25,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
+        <TrackScroll />
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider
             attribute="class"
