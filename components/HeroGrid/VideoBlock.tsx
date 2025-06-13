@@ -1,8 +1,6 @@
 'use client'
-import { useTranslations } from 'next-intl'
 
 export default function VideoBlock() {
-  const t = useTranslations('VideoBackground')
   return (
     <div className="relative w-full h-auto aspect-video overflow-hidden">
       <video
