@@ -32,6 +32,8 @@ function ImageBlock({ src, alt }: { src: string; alt: string }) {
       width={400}
       height={300}
       className="w-full h-auto object-cover "
+      priority
+      quality={50}
     />
   )
 }
