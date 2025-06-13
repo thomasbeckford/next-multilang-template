@@ -19,6 +19,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
         await import(`../messages/${locale}/VideoBackground.json`)
       ).default,
       HeroGrid: (await import(`../messages/${locale}/HeroGrid.json`)).default,
+      Contact: (await import(`../messages/${locale}/Contact.json`)).default,
     },
   }
 })

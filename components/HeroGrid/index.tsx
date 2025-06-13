@@ -25,7 +25,13 @@ export default function HeroGrid() {
     >
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <div className="z-10 text-center w-4/5 my-16 px-8 relative">
-          <h1 className="text-4xl font-bold">{t('title')}</h1>
+          <h1 className="text-6xl font-bold max-w-4xl mx-auto text-shadow-md text-shadow-black">
+            {t.rich('title', {
+              highlight: (chunks) => (
+                <span className="text-primary ">{chunks}</span>
+              ),
+            })}
+          </h1>
         </div>
 
         <motion.div

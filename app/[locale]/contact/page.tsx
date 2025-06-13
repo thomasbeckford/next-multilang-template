@@ -4,23 +4,16 @@ import getMetadata from '@/lib/seo'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = getMetadata({
-  title: 'About | Next Multilang Template',
+  title: 'Contact | Next Multilang Template',
   description:
-    'This is the about page of Next Multilang Template, a modern multi-language starter.',
+    'This is the contact page of Next Multilang Template, a modern multi-language starter.',
   url: 'https://next-multilang-template.vercel.app',
   image: 'https://next-multilang-template.vercel.app/og-image.jpg',
 })
 
-export default function AboutPage() {
-  const t = useTranslations('About')
+export default function ContactPage() {
+  const t = useTranslations('Contact')
   const t2 = useTranslations('HomePage')
-
-  const user = {
-    firstName: 'John',
-    lastName: 'Doe',
-    memberSince: new Date('2020-01-01'),
-    numFollowers: 10,
-  }
 
   const features = t2.raw('featuresList') as {
     title: string
@@ -28,14 +21,12 @@ export default function AboutPage() {
   }[]
 
   return (
-    <section id="about">
+    <section id="contact">
       <Container className="animate-in fade-in">
-        <h1>{t('title', { firstName: user.firstName })}</h1>
-        <p>{t('membership', { memberSince: user.memberSince })}</p>
-        <p>{t('followers', { count: user.numFollowers })}</p>
-
+        <h1>{t('title')}</h1>
         <p>{t('description')}</p>
       </Container>
+
       <Container
         variant="breakpointPadded"
         className="animate-in fade-in bg-secondary text-secondary-foreground"

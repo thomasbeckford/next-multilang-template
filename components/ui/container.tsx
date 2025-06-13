@@ -25,7 +25,7 @@ export interface ContainerProps
   asChild?: boolean
 }
 
-const defaultContainerStyle = 'py-12 rounded-lg last:mb-12'
+const defaultContainerStyle = 'py-12 rounded-lg mb-12'
 
 const Container: React.FC<ContainerProps> = ({
   asChild,
