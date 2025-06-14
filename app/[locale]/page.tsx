@@ -4,6 +4,7 @@ import { type Metadata } from 'next'
 import HeroGrid from '@/components/HeroGrid'
 import { Container } from '@/components/ui/container'
 import ScrollMarquee from '@/components/ScrollMarquee'
+import AutoMarquee from '@/components/AutoMarquee'
 
 export const metadata: Metadata = getMetadata({
   title: 'Home | Next Multilang Template',
@@ -24,6 +25,7 @@ export default function HomePage() {
     <section id="home" className="space-y-20  ">
       <HeroGrid />
 
+      <AutoMarquee />
       <Container
         variant="constrainedPadded"
         className="animate-in fade-in bg-secondary text-secondary-foreground"
@@ -38,6 +40,7 @@ export default function HomePage() {
           ))}
         </ul>
       </Container>
+
       <ScrollMarquee />
       <Container
         variant="breakpointPadded"
