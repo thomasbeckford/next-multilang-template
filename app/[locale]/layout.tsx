@@ -7,6 +7,7 @@ import ThemeSwitcher from '@/components/ThemeSwitcher'
 import Navbar from '@/components/Navbar'
 import MobileNav from '@/components/MobileNav'
 import TrackScroll from '@/components/TrackScroll'
+import { ClerkProvider } from '@clerk/nextjs'
 import '@/app/globals.css'
 
 export default async function LocaleLayout({
@@ -26,29 +27,31 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body>
         <TrackScroll />
-        <NextIntlClientProvider locale={locale}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="flex flex-col  ">
-              <div className="flex justify-between items-center w-full md:p-4 p-2">
-                <h1 className="hidden md:block scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
-                  Thomas
-                </h1>
-                <MobileNav />
-                <Navbar />
-                <div className="flex gap-2">
-                  <LanguageSwitcher />
-                  <ThemeSwitcher />
+        <ClerkProvider>
+          <NextIntlClientProvider locale={locale}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div className="flex flex-col  ">
+                <div className="flex justify-between items-center w-full md:p-4 p-2">
+                  <h1 className="hidden md:block scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
+                    Thomas
+                  </h1>
+                  <MobileNav />
+                  <Navbar />
+                  <div className="flex gap-2">
+                    <LanguageSwitcher />
+                    <ThemeSwitcher />
+                  </div>
                 </div>
+                <div>{children}</div>
               </div>
-              <div>{children}</div>
-            </div>
-          </ThemeProvider>
-        </NextIntlClientProvider>
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </ClerkProvider>
       </body>
     </html>
   )

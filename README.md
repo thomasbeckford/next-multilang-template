@@ -35,6 +35,9 @@ Includes support for **internationalization**, **dark/light themes**, **dynamic 
 - 🎞️ **Smooth animations**
   Scroll and interaction-based animations powered by [Framer Motion](https://www.framer.com/motion/).
 
+- 📝 **Authentication**
+  Protected routes using [Clerk](https://clerk.com/).
+
 ---
 
 ## 🚀 Tech Stack
@@ -44,6 +47,7 @@ Includes support for **internationalization**, **dark/light themes**, **dynamic 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Shadcn UI](https://ui.shadcn.com/)
 - [Framer Motion](https://www.framer.com/motion/)
+- [Clerk](https://clerk.com/)
 
 ---
 
