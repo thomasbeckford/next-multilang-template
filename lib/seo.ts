@@ -14,6 +14,13 @@ export default function getMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: url,
+      languages: {
+        'en-US': '/en-US',
+        'es-ES': '/es-ES',
+      },
+    },
     openGraph: {
       title,
       description,
