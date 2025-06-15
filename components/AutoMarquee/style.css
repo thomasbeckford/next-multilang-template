@@ -1,6 +1,7 @@
 .marquee {
   max-width: 1800px;
   overflow: hidden;
+  margin: 0 auto;
   --speed: 25s;
   --item-width: 120px;
   --item-gap: 5px;
@@ -14,7 +15,6 @@
   display: grid;
   grid-template-columns: var(--track-width) [track] 0px [resting];
   width: max-content;
-  margin: 0 auto;
 }
 
 .marquee-item {

@@ -69,30 +69,6 @@ const AutoMarquee: React.FC<{
         label: 'Brand-14',
         imageUrl: '/globe.svg',
       },
-      {
-        label: 'Brand-15',
-        imageUrl: '/next.svg',
-      },
-      {
-        label: 'Brand-16',
-        imageUrl: '/file.svg',
-      },
-      {
-        label: 'Brand-17',
-        imageUrl: '/vercel.svg',
-      },
-      {
-        label: 'Brand-18',
-        imageUrl: '/globe.svg',
-      },
-      {
-        label: 'Brand-19',
-        imageUrl: '/file.svg',
-      },
-      {
-        label: 'Brand-20',
-        imageUrl: '/next.svg',
-      },
     ]
   }
 
@@ -129,7 +105,6 @@ const AutoMarquee: React.FC<{
                 width={120}
                 height={120}
                 quality={85}
-                layout="responsive"
               />
             ) : null}
           </div>

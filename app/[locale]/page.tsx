@@ -25,7 +25,10 @@ export default function HomePage() {
     <section id="home" className="space-y-20  ">
       <HeroGrid />
 
-      <AutoMarquee />
+      <Container>
+        <AutoMarquee />
+      </Container>
+
       <Container
         variant="constrainedPadded"
         className="animate-in fade-in bg-secondary text-secondary-foreground"
@@ -42,6 +45,7 @@ export default function HomePage() {
       </Container>
 
       <ScrollMarquee />
+
       <Container
         variant="breakpointPadded"
         className="animate-in fade-in bg-secondary text-secondary-foreground"
