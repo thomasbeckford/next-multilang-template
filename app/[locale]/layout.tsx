@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar'
 import MobileNav from '@/components/MobileNav'
 import TrackScroll from '@/components/TrackScroll'
 import { ClerkProvider } from '@clerk/nextjs'
+import Footer from '@/components/Footer'
 import '@/app/globals.css'
 
 export default async function LocaleLayout({
@@ -35,7 +36,7 @@ export default async function LocaleLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="flex flex-col  ">
+              <div className="flex flex-col ">
                 <div className="flex justify-between items-center w-full md:p-4 p-2">
                   <h1 className="hidden md:block scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
                     Thomas
@@ -47,7 +48,11 @@ export default async function LocaleLayout({
                     <ThemeSwitcher />
                   </div>
                 </div>
-                <div>{children}</div>
+                <div className="md:space-y-20 space-y-6">
+                  {children}
+
+                  <Footer />
+                </div>
               </div>
             </ThemeProvider>
           </NextIntlClientProvider>

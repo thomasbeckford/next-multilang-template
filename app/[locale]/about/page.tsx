@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
 import { type Metadata } from 'next'
+import Card from '@/components/Card'
 
 export const metadata: Metadata = getMetadata({
   title: 'About | Next Multilang Template',
@@ -28,7 +29,7 @@ export default function AboutPage() {
   }[]
 
   return (
-    <section id="about">
+    <section id="about" className="md:space-y-20 space-y-6">
       <Container className="animate-in fade-in">
         <h1>{t('title', { firstName: user.firstName })}</h1>
         <p>{t('membership', { memberSince: user.memberSince })}</p>
@@ -36,10 +37,7 @@ export default function AboutPage() {
 
         <p>{t('description')}</p>
       </Container>
-      <Container
-        variant="breakpointPadded"
-        className="animate-in fade-in bg-secondary text-secondary-foreground"
-      >
+      <Card>
         <h2 className="text-3xl font-bold mb-10">✨ {t2('features')}</h2>
         <ul className="space-y-6">
           {features.map(({ title, description }) => (
@@ -49,12 +47,9 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </Container>
+      </Card>
 
-      <Container
-        variant="breakpointPadded"
-        className="animate-in fade-in bg-secondary text-secondary-foreground"
-      >
+      <Card>
         <h2 className="text-3xl font-bold mb-10">✨ {t2('features')}</h2>
         <ul className="space-y-6">
           {features.map(({ title, description }) => (
@@ -64,7 +59,7 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
-      </Container>
+      </Card>
     </section>
   )
 }

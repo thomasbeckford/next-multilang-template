@@ -5,6 +5,7 @@ import HeroGrid from '@/components/HeroGrid'
 import { Container } from '@/components/ui/container'
 import ScrollMarquee from '@/components/ScrollMarquee'
 import AutoMarquee from '@/components/AutoMarquee'
+import Card from '@/components/Card'
 
 export const metadata: Metadata = getMetadata({
   title: 'Home | Next Multilang Template',
@@ -22,17 +23,20 @@ export default function HomePage() {
   }[]
 
   return (
-    <section id="home" className="space-y-20  ">
+    <section id="home" className="md:space-y-20 space-y-6">
       <HeroGrid />
 
       <Container>
         <AutoMarquee />
       </Container>
 
-      <Container
-        variant="constrainedPadded"
-        className="animate-in fade-in bg-secondary text-secondary-foreground"
-      >
+      <Container>
+        <h2 className="text-3xl font-bold text-center">
+          Quality components, fast performance, and a great user experience
+        </h2>
+      </Container>
+
+      <Card>
         <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
         <ul className="space-y-6">
           {features.map(({ title, description }) => (
@@ -42,14 +46,11 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-      </Container>
+      </Card>
 
       <ScrollMarquee />
 
-      <Container
-        variant="breakpointPadded"
-        className="animate-in fade-in bg-secondary text-secondary-foreground"
-      >
+      <Card>
         <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
         <ul className="space-y-6">
           {features.map(({ title, description }) => (
@@ -59,12 +60,9 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-      </Container>
+      </Card>
 
-      <Container
-        variant="breakpointPadded"
-        className="animate-in fade-in bg-secondary text-secondary-foreground"
-      >
+      <Card>
         <h2 className="text-3xl font-bold mb-10">✨ {t('features')}</h2>
         <ul className="space-y-6">
           {features.map(({ title, description }) => (
@@ -74,7 +72,7 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
-      </Container>
+      </Card>
     </section>
   )
 }
