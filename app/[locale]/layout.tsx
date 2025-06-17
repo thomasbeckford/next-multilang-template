@@ -38,7 +38,7 @@ export default async function LocaleLayout({
               <div className="flex flex-col ">
                 <div className="flex justify-between items-center w-full md:p-4 p-2">
                   <h1 className="hidden md:block scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
-                    Thomas
+                    LOGO
                   </h1>
                   <MobileNav />
                   <Navbar />
