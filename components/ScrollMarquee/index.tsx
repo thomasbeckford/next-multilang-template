@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue } from 'motion/react'
 
 const wordsLine1 = [
   'frontend',

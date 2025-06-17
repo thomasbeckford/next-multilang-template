@@ -1,13 +1,13 @@
 'use client'
-import { motion } from 'framer-motion'
+
+import { motion, MotionValue } from 'motion/react'
 import VideoBlock from './VideoBlock'
 import Image from 'next/image'
-import { MotionValue } from 'framer-motion'
 
 type Props = {
   includeVideo?: boolean
   opacity: MotionValue<number>
-  images: string[] // debe contener 3 elementos
+  images: string[]
 }
 
 export default function Column({
@@ -31,7 +31,7 @@ function ImageBlock({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       width={400}
       height={300}
-      className="w-full h-auto object-cover "
+      className="w-full h-auto object-cover"
       priority
       quality={50}
     />

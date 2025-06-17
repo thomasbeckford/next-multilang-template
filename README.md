@@ -2,7 +2,7 @@
 
 A modern and flexible **Next.js 15 starter template** built for scalable, international web apps.
 
-Includes support for **internationalization**, **dark/light themes**, **dynamic SEO**, **Tailwind CSS**, **Shadcn UI**, and **Framer Motion** animations.
+Includes support for **internationalization**, **dark/light themes**, **dynamic SEO**, **Tailwind CSS**, **Shadcn UI**, and **Motion** animations.
 
 ---
 
@@ -33,7 +33,8 @@ Includes support for **internationalization**, **dark/light themes**, **dynamic 
   Dynamically generated using a `getMetadata()` function.
 
 - 🎞️ **Smooth animations**
-  Scroll and interaction-based animations powered by [Framer Motion](https://www.framer.com/motion/).
+  Scroll and interaction-based animations powered by [Motion](https://motion.dev/).
+  (Using Animate-UI too)
 
 - 📝 **Authentication**
   Protected routes using [Clerk](https://clerk.com/).
@@ -46,7 +47,7 @@ Includes support for **internationalization**, **dark/light themes**, **dynamic 
 - [next-intl](https://github.com/amannn/next-intl)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Shadcn UI](https://ui.shadcn.com/)
-- [Framer Motion](https://www.framer.com/motion/)
+- [Motion](https://motion.dev/)
 - [Clerk](https://clerk.com/)
 
 ---

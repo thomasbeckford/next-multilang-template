@@ -3,6 +3,7 @@ import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
 import { type Metadata } from 'next'
 import Card from '@/components/Card'
+import { CodeEditorDemo } from '@/components/CodeEditor'
 
 export const metadata: Metadata = getMetadata({
   title: 'About | Next Multilang Template',
@@ -37,17 +38,10 @@ export default function AboutPage() {
 
         <p>{t('description')}</p>
       </Container>
-      <Card>
-        <h2 className="text-3xl font-bold mb-10">✨ {t2('features')}</h2>
-        <ul className="space-y-6">
-          {features.map(({ title, description }) => (
-            <li key={title}>
-              <h3 className="text-lg font-medium ">{title}</h3>
-              <p className="text-muted-foreground">{description}</p>
-            </li>
-          ))}
-        </ul>
-      </Card>
+
+      <Container className="">
+        <CodeEditorDemo />
+      </Container>
 
       <Card>
         <h2 className="text-3xl font-bold mb-10">✨ {t2('features')}</h2>

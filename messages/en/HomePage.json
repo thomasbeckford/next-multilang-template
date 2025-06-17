@@ -37,7 +37,7 @@
     },
     {
       "title": "🎞️ Smooth animations",
-      "description": "Framer Motion-based animations triggered on scroll or interaction"
+      "description": "Motion-based animations triggered on scroll or interaction"
     }
   ]
 }

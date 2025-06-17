@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/cookie-policy">Cookie Policy</Link>
           </div>
 
-          <p>© {new Date().getFullYear()} AwaitCode</p>
+          <p>© {new Date().getFullYear()} Next.js Multilingual Boilerplate</p>
         </div>
       </Container>
     </div>

@@ -6,7 +6,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import Navbar from '@/components/Navbar'
 import MobileNav from '@/components/MobileNav'
-import TrackScroll from '@/components/TrackScroll'
+import { ScrollProgress } from '@/components/animate-ui/components/scroll-progress'
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/Footer'
 import '@/app/globals.css'
@@ -27,7 +27,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
-        <TrackScroll />
         <ClerkProvider>
           <NextIntlClientProvider locale={locale}>
             <ThemeProvider
@@ -48,9 +47,10 @@ export default async function LocaleLayout({
                     <ThemeSwitcher />
                   </div>
                 </div>
-                <div className="md:space-y-20 space-y-6">
-                  {children}
 
+                <div className="md:space-y-20 space-y-6">
+                  <ScrollProgress />
+                  {children}
                   <Footer />
                 </div>
               </div>

@@ -49,7 +49,7 @@ export default function MobileNav() {
         </div>
 
         <div className="text-sm text-muted-foreground mt-10 text-center">
-          © {new Date().getFullYear()} AwaitCode
+          © {new Date().getFullYear()} Next.js Multilingual Boilerplate
         </div>
       </DrawerContent>
     </Drawer>
