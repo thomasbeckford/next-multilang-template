@@ -1,44 +1,34 @@
 {
   "title": "Scroll para ver más",
-  "heroGrid": "Crea sitios web multilingües en minutos con <highlight>LinguaFlex</highlight>",
+  "heroGrid": "Crea sitios web multilingües en minutos con <highlight>ClearSpeak</highlight>",
   "about": "Ir a la página sobre nosotros",
   "features": "Características",
+
   "featuresList": [
     {
-      "title": "🌍 Internacionalización",
-      "description": "Impulsada por next-intl, con traducciones limpias y escalables basadas en JSON"
+      "title": "Traducción instantánea via IA",
+      "description": "Detecta el idioma del usuario y traduce el contenido en tiempo real.",
+      "icon": "ArrowRight"
     },
     {
-      "title": "🧠 Detección automática de idioma",
-      "description": "Basada en las preferencias del navegador (header Accept-Language)"
+      "title": "Detección automática de tema",
+      "description": "Adapta la apariencia de tu sitio a las preferencias del usuario.",
+      "icon": "Paintbrush"
     },
     {
-      "title": "🚀 Enrutamiento según idioma",
-      "description": "Prefijos opcionales como /en o /es, manejados automáticamente por middleware"
+      "title": "Configuración rápida",
+      "description": "Comienza en segundos con integración sin problemas en tu proyecto.",
+      "icon": "Download"
     },
     {
-      "title": "🌐 Selector de idioma",
-      "description": "El usuario puede cambiar manualmente el idioma y guardamos su preferencia en una cookie"
+      "title": "Diseño para desarrolladores",
+      "description": "Construido con herramientas modernas como Next.js, Tailwind CSS y animaciones de movimiento — para que puedas enviar aplicaciones listas para el mundo más rápido, con menos sobrecarga.",
+      "icon": "RefreshCcw"
     },
     {
-      "title": "🗂 Estructura modular",
-      "description": "Traducciones separadas por sección/página para mantener el orden"
-    },
-    {
-      "title": "🎨 Tailwind + shadcn/ui",
-      "description": "Componentes UI elegantes con utilidades de estilo"
-    },
-    {
-      "title": "🌙 Selector de tema",
-      "description": "Cambio de tema manual, con persistencia mediante cookies"
-    },
-    {
-      "title": "🏷️ SEO Meta tags",
-      "description": "Generados por la función getMetadata"
-    },
-    {
-      "title": "🎞️ Animaciones suaves",
-      "description": "Animaciones suaves basadas en  Motion"
+      "title": "Enrutamiento listo para el mundo",
+      "description": "Automáticamente maneja URLs localizadas y optimización SEO.",
+      "icon": "ExternalLink"
     }
   ]
 }
