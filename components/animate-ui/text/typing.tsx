@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import * as React from 'react';
-import { motion, useInView, type UseInViewOptions } from 'motion/react';
+import * as React from 'react'
+import { motion, useInView, type UseInViewOptions } from 'motion/react'
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 function CursorBlinker({ className }: { className?: string }) {
   return (
@@ -24,25 +24,25 @@ function CursorBlinker({ className }: { className?: string }) {
       animate="blinking"
       className={cn(
         'inline-block h-5 w-[1px] translate-y-1 bg-black dark:bg-white',
-        className,
+        className
       )}
     />
-  );
+  )
 }
 
 type TypingTextProps = Omit<React.ComponentProps<'span'>, 'children'> & {
-  duration?: number;
-  delay?: number;
-  inView?: boolean;
-  inViewMargin?: UseInViewOptions['margin'];
-  inViewOnce?: boolean;
-  cursor?: boolean;
-  loop?: boolean;
-  holdDelay?: number;
-  text: string | string[];
-  cursorClassName?: string;
-  animateOnChange?: boolean;
-};
+  duration?: number
+  delay?: number
+  inView?: boolean
+  inViewMargin?: UseInViewOptions['margin']
+  inViewOnce?: boolean
+  cursor?: boolean
+  loop?: boolean
+  holdDelay?: number
+  text: string | string[]
+  cursorClassName?: string
+  animateOnChange?: boolean
+}
 
 function TypingText({
   ref,
@@ -59,102 +59,101 @@ function TypingText({
   animateOnChange = true,
   ...props
 }: TypingTextProps) {
-  const localRef = React.useRef<HTMLSpanElement>(null);
-  React.useImperativeHandle(ref, () => localRef.current as HTMLSpanElement);
+  const localRef = React.useRef<HTMLSpanElement>(null)
+  React.useImperativeHandle(ref, () => localRef.current as HTMLSpanElement)
 
   const inViewResult = useInView(localRef, {
     once: inViewOnce,
     margin: inViewMargin,
-  });
-  const isInView = !inView || inViewResult;
+  })
+  const isInView = !inView || inViewResult
 
-  const [started, setStarted] = React.useState(false);
-  const [displayedText, setDisplayedText] = React.useState<string>('');
+  const [started, setStarted] = React.useState(false)
+  const [displayedText, setDisplayedText] = React.useState<string>('')
 
   React.useEffect(() => {
-    // Reset animation when text changes (if animateOnChange is true)
     if (animateOnChange) {
-      setStarted(false);
-      setDisplayedText('');
+      setStarted(false)
+      setDisplayedText('')
     }
 
     if (isInView) {
       const timeoutId = setTimeout(() => {
-        setStarted(true);
-      }, delay);
-      return () => clearTimeout(timeoutId);
+        setStarted(true)
+      }, delay)
+      return () => clearTimeout(timeoutId)
     } else {
       const timeoutId = setTimeout(() => {
-        setStarted(true);
-      }, delay);
-      return () => clearTimeout(timeoutId);
+        setStarted(true)
+      }, delay)
+      return () => clearTimeout(timeoutId)
     }
-  }, [isInView, delay, ...(animateOnChange ? [text] : [])]);
+  }, [isInView, delay, text, animateOnChange])
 
   React.useEffect(() => {
-    if (!started) return;
-    const timeoutIds: Array<ReturnType<typeof setTimeout>> = [];
-    const texts: string[] = typeof text === 'string' ? [text] : text;
+    if (!started) return
+    const timeoutIds: Array<ReturnType<typeof setTimeout>> = []
+    const texts: string[] = typeof text === 'string' ? [text] : text
 
     const typeText = (str: string, onComplete: () => void) => {
-      let currentIndex = 0;
+      let currentIndex = 0
       const type = () => {
         if (currentIndex <= str.length) {
-          setDisplayedText(str.substring(0, currentIndex));
-          currentIndex++;
-          const id = setTimeout(type, duration);
-          timeoutIds.push(id);
+          setDisplayedText(str.substring(0, currentIndex))
+          currentIndex++
+          const id = setTimeout(type, duration)
+          timeoutIds.push(id)
         } else {
-          onComplete();
+          onComplete()
         }
-      };
-      type();
-    };
+      }
+      type()
+    }
 
     const eraseText = (str: string, onComplete: () => void) => {
-      let currentIndex = str.length;
+      let currentIndex = str.length
       const erase = () => {
         if (currentIndex >= 0) {
-          setDisplayedText(str.substring(0, currentIndex));
-          currentIndex--;
-          const id = setTimeout(erase, duration);
-          timeoutIds.push(id);
+          setDisplayedText(str.substring(0, currentIndex))
+          currentIndex--
+          const id = setTimeout(erase, duration)
+          timeoutIds.push(id)
         } else {
-          onComplete();
+          onComplete()
         }
-      };
-      erase();
-    };
+      }
+      erase()
+    }
 
     const animateTexts = (index: number) => {
       typeText(texts[index] ?? '', () => {
-        const isLast = index === texts.length - 1;
+        const isLast = index === texts.length - 1
         if (isLast && !loop) {
-          return;
+          return
         }
         const id = setTimeout(() => {
           eraseText(texts[index] ?? '', () => {
-            const nextIndex = isLast ? 0 : index + 1;
-            animateTexts(nextIndex);
-          });
-        }, holdDelay);
-        timeoutIds.push(id);
-      });
-    };
+            const nextIndex = isLast ? 0 : index + 1
+            animateTexts(nextIndex)
+          })
+        }, holdDelay)
+        timeoutIds.push(id)
+      })
+    }
 
-    animateTexts(0);
+    animateTexts(0)
 
     return () => {
-      timeoutIds.forEach(clearTimeout);
-    };
-  }, [text, duration, started, loop, holdDelay]);
+      timeoutIds.forEach(clearTimeout)
+    }
+  }, [text, duration, started, loop, holdDelay])
 
   return (
     <span ref={localRef} data-slot="typing-text" {...props}>
       <motion.span>{displayedText}</motion.span>
       {cursor && <CursorBlinker className={cursorClassName} />}
     </span>
-  );
+  )
 }
 
-export { TypingText, type TypingTextProps };
+export { TypingText, type TypingTextProps }

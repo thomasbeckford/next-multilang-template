@@ -23,14 +23,14 @@ export default function ContactPage() {
       <Container className="animate-in fade-in space-y-4">
         <h1 className="text-4xl font-bold">{t('title')}</h1>
         <p className="text-muted-foreground">
-          Get in touch if you'd like to work together or learn more about
+          Get in touch if you&rsquo;d like to work together or learn more about
           ClearSpeak.
         </p>
       </Container>
 
       <Card>
         <div className="space-y-6 text-center">
-          <h2 className="text-2xl font-semibold">✨ Let’s connect</h2>
+          <h2 className="text-2xl font-semibold">✨ Let&rsquo;s connect</h2>
 
           <div className="space-y-2">
             <p className="text-muted-foreground">
