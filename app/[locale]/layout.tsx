@@ -35,7 +35,7 @@ export default async function LocaleLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="flex flex-col ">
+              <div className="flex flex-col justify-between min-h-screen">
                 <div className="flex justify-between items-center w-full md:p-4 p-2">
                   <h1 className="hidden md:block scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
                     LOGO
@@ -48,9 +48,10 @@ export default async function LocaleLayout({
                   </div>
                 </div>
 
-                <div className="md:space-y-20 space-y-6">
+                <div>
                   <ScrollProgress />
-                  {children}
+                  <main className="mb-12 md:mb-20">{children}</main>
+
                   <Footer />
                 </div>
               </div>

@@ -1,6 +1,11 @@
 {
-  "title": "{firstName}'s profile",
-  "membership": "Member since {memberSince, date, short}",
-  "followers": "{count, plural, =0 {No followers yet} =1 {One follower} other {# followers}}",
-  "description": "THIS IS A PROTECTED ROUTE: We can use variables inside the translation to make it more dynamic"
+  "title": "About ClearSpeak",
+  "subtitle": "Simple, fast, global-ready websites",
+  "section1Title": "Our Mission",
+  "section1Body": "ClearSpeak was created to make multilingual websites effortless. We help developers and teams reach a global audience without worrying about the complexity of localization.",
+  "section2Title": "Why ClearSpeak?",
+  "section2Body": "We combine AI-powered translation, intuitive developer tools, and a clean design system to give you everything you need for a modern, international web experience.",
+  "section3Title": "Built for developers",
+  "section3Body": "From day one, ClearSpeak was built with modern tools like Next.js, Tailwind CSS, and motion animations — so you can ship global-ready apps faster, with less overhead.",
+  "cta": "Want to see ClearSpeak in action? Get in touch."
 }

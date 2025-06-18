@@ -14,8 +14,10 @@ const intlMiddleware = createMiddleware({
 
 const isProtectedRoute = createRouteMatcher(
   routing.locales.flatMap((locale) => [
-    `/${locale}/about`,
-    `/${locale}/about/(.*)`,
+    `/${locale}/dashboard`,
+    `/${locale}/dashboard/(.*)`,
+    `/${locale}/settings`,
+    `/${locale}/settings/(.*)`,
   ])
 )
 

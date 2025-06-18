@@ -8,7 +8,7 @@ import useDeviceType, { DeviceType } from '@/hooks/useDeviceType'
 
 export default function HeroGrid() {
   const ref = useRef(null)
-  const t = useTranslations('HeroGrid')
+  const t = useTranslations('HomePage')
 
   const deviceType = useDeviceType()
 

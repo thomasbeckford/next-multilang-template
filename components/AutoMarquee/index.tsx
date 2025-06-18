@@ -13,62 +13,16 @@ const AutoMarquee: React.FC<{
   let { brands } = props
   if (!brands?.length) {
     brands = [
-      {
-        label: 'Brand-1',
-        imageUrl: '/file.svg',
-      },
-      {
-        label: 'Brand-2',
-        imageUrl: '/globe.svg',
-      },
-      {
-        label: 'Brand-3',
-        imageUrl: '/next.svg',
-      },
-      {
-        label: 'Brand-4',
-        imageUrl: '/vercel.svg',
-      },
-      {
-        label: 'Brand-5',
-        imageUrl: '/file.svg',
-      },
-      {
-        label: 'Brand-6',
-        imageUrl: '/globe.svg',
-      },
-      {
-        label: 'Brand-7',
-        imageUrl: '/next.svg',
-      },
-      {
-        label: 'Brand-8',
-        imageUrl: '/vercel.svg',
-      },
-      {
-        label: 'Brand-9',
-        imageUrl: '/file.svg',
-      },
-      {
-        label: 'Brand-10',
-        imageUrl: '/globe.svg',
-      },
-      {
-        label: 'Brand-11',
-        imageUrl: '/next.svg',
-      },
-      {
-        label: 'Brand-12',
-        imageUrl: '/file.svg',
-      },
-      {
-        label: 'Brand-13',
-        imageUrl: '/vercel.svg',
-      },
-      {
-        label: 'Brand-14',
-        imageUrl: '/globe.svg',
-      },
+      { label: 'English', imageUrl: 'https://flagcdn.com/us.svg' },
+      { label: 'Español', imageUrl: 'https://flagcdn.com/es.svg' },
+      { label: 'Français', imageUrl: 'https://flagcdn.com/fr.svg' },
+      { label: 'Deutsch', imageUrl: 'https://flagcdn.com/de.svg' },
+      { label: 'Português', imageUrl: 'https://flagcdn.com/br.svg' },
+      { label: 'Italiano', imageUrl: 'https://flagcdn.com/it.svg' },
+      { label: '日本語', imageUrl: 'https://flagcdn.com/jp.svg' },
+      { label: '中文', imageUrl: 'https://flagcdn.com/cn.svg' },
+      { label: '한국어', imageUrl: 'https://flagcdn.com/kr.svg' },
+      { label: 'العربية', imageUrl: 'https://flagcdn.com/sa.svg' },
     ]
   }
 
@@ -100,6 +54,7 @@ const AutoMarquee: React.FC<{
           >
             {brand.imageUrl ? (
               <Image
+                unoptimized
                 src={brand.imageUrl}
                 alt={brand.label}
                 width={120}

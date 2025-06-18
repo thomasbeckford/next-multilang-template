@@ -2,42 +2,42 @@
 
 import { motion, useScroll, useTransform, MotionValue } from 'motion/react'
 
-const wordsLine1 = [
+export const wordsLine1 = [
   'frontend',
-  '*',
+  '·',
   'responsive design',
-  '*',
+  '·',
   'performance',
-  '*',
+  '·',
   'user experience',
-  '*',
+  '·',
   'accessibility',
-  '*',
+  '·',
   'javascript',
-  '*',
+  '·',
   'typescript',
-  '*',
+  '·',
   'react',
-  '*',
+  '·',
 ]
 
-const wordsLine2 = [
+export const wordsLine2 = [
   'web apps',
-  '*',
+  '·',
   'next.js',
-  '*',
+  '·',
   'seo optimization',
-  '*',
+  '·',
   'ui design',
-  '*',
+  '·',
   'tailwind css',
-  '*',
+  '·',
   'api integration',
-  '*',
+  '·',
   'auth systems',
-  '*',
+  '·',
   'cms ready',
-  '*',
+  '·',
 ]
 
 const Marquee = () => {
@@ -54,7 +54,7 @@ const Marquee = () => {
         style={{ x }}
       >
         {[...words, ...words].map((word, i) => {
-          const isSymbol = word === '*'
+          const isSymbol = word === '·'
           const colorClass = isSymbol
             ? 'text-muted-foreground'
             : realWordCount++ % 2 === 0
