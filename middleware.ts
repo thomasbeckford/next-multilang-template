@@ -25,15 +25,15 @@ const isProtectedRoute = createRouteMatcher(
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl
 
-  if (isProtectedRoute(req)) {
-    console.log('Protegida')
-    await auth.protect()
-  }
-
   // 👇 Esta línea evita aplicar next-intl a /studio y sus subrutas
   if (pathname.startsWith('/studio')) {
     console.log('Studio')
     return NextResponse.next()
+  }
+
+  if (isProtectedRoute(req)) {
+    console.log('Protegida')
+    await auth.protect()
   }
 
   return intlMiddleware(req)
