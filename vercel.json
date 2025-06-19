@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/studio",
+      "destination": "/studio/",
+      "permanent": false
+    }
+  ]
+}
