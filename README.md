@@ -8,6 +8,14 @@ Includes support for **Sanity CMS**, **internationalization**, **dark/light them
 
 ## ✨ Features
 
+### 🤖 AI-Powered Enhancements
+
+- 🌐 **AI-driven multilingual fallback**
+  If a post is not available in the selected language, it is automatically translated from the fallback language (e.g., English) using the OpenAI API, without requiring additional content duplication in the CMS.
+
+- ⚡ **On-the-fly content translation**
+  Posts can be dynamically translated during fetch if no localized version exists — useful for MVPs and reducing editorial workload.
+
 - 🌍 **Locale detection & routing**
   Detects the user's preferred language via the browser (`Accept-Language` header),
   and enables locale-aware routing with optional URL prefixes (`/en`, `/es`, etc.) using [`next-intl`](https://github.com/amannn/next-intl).

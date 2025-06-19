@@ -50,10 +50,9 @@ export default async function LocaleLayout({
 
                 <div>
                   <ScrollProgress />
-                  <main className="mb-12 md:mb-20">{children}</main>
-
-                  <Footer />
+                  <main className="mb-12 md:mb-20 flex-start">{children}</main>
                 </div>
+                <Footer />
               </div>
             </ThemeProvider>
           </NextIntlClientProvider>

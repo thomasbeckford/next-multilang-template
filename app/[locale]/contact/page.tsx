@@ -21,7 +21,6 @@ export default async function ContactPage({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-
   const content = await getContactData(locale as 'es' | 'en')
 
   console.log(content)

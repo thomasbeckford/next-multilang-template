@@ -8,5 +8,7 @@
   "home": "Home",
   "homeDescription": "The home page, a modern multi-language starter.",
   "aboutDescription": "The about page, a modern multi-language starter.",
-  "contactDescription": "The contact page, a modern multi-language starter."
+  "contactDescription": "The contact page, a modern multi-language starter.",
+  "dashboard": "Dashboard",
+  "dashboardDescription": "The dashboard page, a modern multi-language starter."
 }

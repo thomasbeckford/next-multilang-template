@@ -19,6 +19,11 @@ const useLinks = () => {
       label: t('contact'),
       description: t('contactDescription'),
     },
+    {
+      href: '/dashboard',
+      label: t('dashboard'),
+      description: t('dashboardDescription'),
+    },
   ]
 
   return links

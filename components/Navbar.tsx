@@ -11,7 +11,7 @@ export default function Navbar() {
     <header className="hidden md:flex items-center justify-between border-b bg-transparent">
       <div className="flex items-center gap-8">
         <nav className="flex items-center gap-6">
-          {links.slice(0, 3).map((link) => (
+          {links.slice(0, 4).map((link) => (
             <Link
               key={link.href}
               href={link.href}

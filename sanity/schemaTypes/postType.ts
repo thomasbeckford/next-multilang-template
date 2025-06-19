@@ -1,5 +1,5 @@
-import {DocumentTextIcon} from '@sanity/icons'
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import { DocumentTextIcon } from '@sanity/icons'
+import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export const postType = defineType({
   name: 'post',
@@ -19,9 +19,23 @@ export const postType = defineType({
       },
     }),
     defineField({
+      name: 'language',
+      type: 'string',
+      title: 'Language',
+      options: {
+        list: [
+          { title: 'English', value: 'en' },
+          { title: 'Español', value: 'es' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'en',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'author',
       type: 'reference',
-      to: {type: 'author'},
+      to: { type: 'author' },
     }),
     defineField({
       name: 'mainImage',
@@ -34,13 +48,13 @@ export const postType = defineType({
           name: 'alt',
           type: 'string',
           title: 'Alternative text',
-        })
-      ]
+        }),
+      ],
     }),
     defineField({
       name: 'categories',
       type: 'array',
-      of: [defineArrayMember({type: 'reference', to: {type: 'category'}})],
+      of: [defineArrayMember({ type: 'reference', to: { type: 'category' } })],
     }),
     defineField({
       name: 'publishedAt',
@@ -58,8 +72,8 @@ export const postType = defineType({
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 })
