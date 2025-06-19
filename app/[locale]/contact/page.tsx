@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl'
 import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
 import { type Metadata } from 'next'
@@ -6,6 +5,7 @@ import Card from '@/components/Card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import { getContactData } from '@/sanity/queries'
 
 export const metadata: Metadata = getMetadata({
   title: 'Contact | ClearSpeak',
@@ -15,17 +15,22 @@ export const metadata: Metadata = getMetadata({
   image: 'https://clearspeak.app/og-image.jpg',
 })
 
-export default function ContactPage() {
-  const t = useTranslations('Contact')
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+
+  const content = await getContactData(locale as 'es' | 'en')
+
+  console.log(content)
 
   return (
     <section id="contact" className="md:space-y-20 space-y-6">
       <Container className="animate-in fade-in space-y-4">
-        <h1 className="text-4xl font-bold">{t('title')}</h1>
-        <p className="text-muted-foreground">
-          Get in touch if you&rsquo;d like to work together or learn more about
-          ClearSpeak.
-        </p>
+        <h1 className="text-4xl font-bold">{content.title}</h1>
+        <p className="text-muted-foreground">{content.description}</p>
       </Container>
 
       <Card>
