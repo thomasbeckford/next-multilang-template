@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/studio",
-      "destination": "/studio/",
+      "destination": "/studio/structure",
       "permanent": false
     }
   ]
