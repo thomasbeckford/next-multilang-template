@@ -6,9 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prebuild": "echo 'Building Sanity to public/studio' && npx @sanity/cli build ./public/studio -y && echo 'Done'",
-    "sanity": "cd public/studio && sanity start"
+    "lint": "next lint"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.22.0",
