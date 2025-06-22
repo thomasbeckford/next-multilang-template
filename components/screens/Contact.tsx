@@ -5,33 +5,14 @@ import Card from '@/components/Card'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { useQuery } from '@tanstack/react-query'
-import { queries } from '@/queries'
-import { useParams } from 'next/navigation'
-import { getContactData } from '@/sanity/queries'
-import { Locale } from '@/lib/constants'
 
-export default function ContactPage() {
-  console.log('🚨 ContactPage SSR')
-  const { locale } = useParams<{ locale: string }>()
-
-  const { data: content, isLoading } = useQuery<{
-    title: string
-    description: string
-  }>({
-    queryKey: [queries.contact.GET_CONTACT_DATA, locale],
-    queryFn: () => getContactData(locale as Locale),
-  })
-
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
-
+export default function ContactPage({ contactData }: any) {
+  console.log(contactData)
   return (
     <section id="contact" className="md:space-y-20 space-y-6">
       <Container className="animate-in fade-in space-y-4">
-        <h1 className="text-4xl font-bold">{content?.title}</h1>
-        <p className="text-muted-foreground">{content?.description}</p>
+        <h1 className="text-4xl font-bold">{contactData?.title}</h1>
+        <p className="text-muted-foreground">{contactData?.description}</p>
       </Container>
 
       <Card>

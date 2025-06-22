@@ -10,24 +10,24 @@ Includes support for **Sanity CMS**, **internationalization**, **dark/light them
 
 ### 🤖 AI-Powered Enhancements
 
-- 🌐 **AI-driven multilingual fallback**
-  If a post is not available in the selected language, it is automatically translated from the fallback language (e.g., English) using the OpenAI API, without requiring additional content duplication in the CMS.
+- 🌐 **Automatic multilingual content (OpenAI + Redis)**
+  All content is authored in a single language (e.g., English) in Sanity, and automatically translated to other languages using the OpenAI API. Translations are cached in Redis using a `locale + updatedAt` key strategy to avoid repeated requests and reduce cost.
 
-- ⚡ **On-the-fly content translation**
-  Posts can be dynamically translated during fetch if no localized version exists — useful for MVPs and reducing editorial workload.
+- ⚡ **Generic translation system**
+  A reusable `translateWithCache()` function takes any object of text fields (like `title`, `description`, `faq1`, etc.), translates them, and returns a fully localized version along with metadata. Works with any structured content.
 
 - 🌍 **Locale detection & routing**
   Detects the user's preferred language via the browser (`Accept-Language` header),
   and enables locale-aware routing with optional URL prefixes (`/en`, `/es`, etc.) using [`next-intl`](https://github.com/amannn/next-intl).
 
-- 🧾 **Sanity CMS with multilingual content**
-  Fully integrated with [Sanity.io](https://www.sanity.io/), using localized schemas to manage content in multiple languages directly from the CMS.
+- 🧾 **Sanity CMS**
+  Content is stored once in Sanity, without the need for manually duplicated localized fields. The AI handles translation dynamically.
 
 - 🌐 **Language switcher**
   Manual language selection with cookie-based persistence.
 
 - 🗂 **Modular CMS structure**
-  Clean schema definitions and GROQ queries organized for scalable, multilingual content delivery.
+  Clean schema definitions and GROQ queries organized for scalable content delivery.
 
 - 🎨 **Tailwind CSS + Shadcn UI**
   Beautiful, accessible components styled with utility-first Tailwind CSS.

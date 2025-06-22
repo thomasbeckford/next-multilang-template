@@ -1,23 +1,20 @@
 import { sanityClient } from './client'
-import { translateText } from './lib/translateText'
+import { translateText } from '../lib/translations/translateText'
 import { Locale } from '@/lib/constants'
+import { translateWithCache } from '@/lib/translations/translateWithCache'
 
 export async function getContactData(locale: Locale) {
-  console.log('Buscando datos de contacto')
   const query = `*[_type == "contact"][0]`
   const data = await sanityClient.fetch(query)
 
-  const [translatedTitle, translatedDescription] = await Promise.all([
-    translateText(data?.title, locale),
-    translateText(data?.description, locale),
-  ])
-
-  return {
-    title: translatedTitle,
-    description: translatedDescription,
-    translated: true,
+  return translateWithCache({
+    locale,
     updatedAt: data._updatedAt,
-  }
+    content: {
+      title: data.title,
+      description: data.description,
+    },
+  })
 }
 
 export async function getPostData(locale: Locale) {

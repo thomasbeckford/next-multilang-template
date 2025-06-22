@@ -1,12 +1,9 @@
 import { Locale } from '@/lib/constants'
 
 export async function translateText(text: string, to: Locale) {
-  try {
-    console.log('📡 Llamando a OpenAI', {
-      env: typeof window === 'undefined' ? 'server' : 'client',
-      text,
-    })
+  if (!text) return 'Error'
 
+  try {
     const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -25,13 +22,23 @@ export async function translateText(text: string, to: Locale) {
             content: text,
           },
         ],
+        temperature: 0.2,
       }),
     })
 
     const json = await res.json()
-    return json.choices?.[0]?.message?.content || 'Error'
+    const translated = json?.choices?.[0]?.message?.content
+
+    console.log('🌍 Traducción recibida:', translated)
+
+    if (!translated || typeof translated !== 'string') {
+      console.warn('⚠️ Traducción no válida:', json)
+      return 'Error'
+    }
+
+    return translated
   } catch (e) {
-    console.log(e)
+    console.error('❌ Error al traducir con OpenAI:', e)
     return 'Error'
   }
 }
