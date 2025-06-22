@@ -10,21 +10,14 @@ export const contactType = defineType({
     defineField({
       name: 'title',
       title: 'Título',
-      type: 'object',
-      fields: [
-        { name: 'es', title: 'Español', type: 'string' },
-        { name: 'en', title: 'Inglés', type: 'string' },
-      ],
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'description',
       title: 'Descripción',
-      type: 'object',
-      fields: [
-        { name: 'es', title: 'Español', type: 'text' },
-        { name: 'en', title: 'Inglés', type: 'text' },
-      ],
+      type: 'text',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 })

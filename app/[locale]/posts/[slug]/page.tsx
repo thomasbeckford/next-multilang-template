@@ -4,12 +4,13 @@ import { PortableText } from '@portabletext/react'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
+import { Locale } from '@/lib/constants'
 
 export async function generateMetadata(props: {
-  params: Promise<{ slug: string; locale: string }>
+  params: Promise<{ slug: string; locale: Locale }>
 }) {
   const { locale, slug } = await props.params
-  const post = await getPostBySlug(locale as 'es' | 'en', slug)
+  const post = await getPostBySlug(locale, slug)
 
   return {
     title: post?.title ?? 'Post',
@@ -20,10 +21,10 @@ export async function generateMetadata(props: {
 export default async function PostPage({
   params,
 }: {
-  params: Promise<{ locale: string; slug: string }>
+  params: Promise<{ locale: Locale; slug: string }>
 }) {
   const { locale, slug } = await params
-  const post = await getPostBySlug(locale as 'en' | 'es', slug)
+  const post = await getPostBySlug(locale, slug)
 
   if (!post) {
     return (

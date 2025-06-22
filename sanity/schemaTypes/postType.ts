@@ -10,6 +10,7 @@ export const postType = defineType({
     defineField({
       name: 'title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -17,19 +18,6 @@ export const postType = defineType({
       options: {
         source: 'title',
       },
-    }),
-    defineField({
-      name: 'language',
-      type: 'string',
-      title: 'Language',
-      options: {
-        list: [
-          { title: 'English', value: 'en' },
-          { title: 'Español', value: 'es' },
-        ],
-        layout: 'radio',
-      },
-      initialValue: 'en',
       validation: (Rule) => Rule.required(),
     }),
     defineField({

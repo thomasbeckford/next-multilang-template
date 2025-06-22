@@ -2,15 +2,16 @@ import { auth } from '@clerk/nextjs/server'
 import { Container } from '@/components/ui/container'
 import Link from 'next/link'
 import { getPostData } from '@/sanity/queries'
+import { Locale } from '@/lib/constants'
 
 export default async function DashboardPage({
   params,
 }: {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: Locale }>
 }) {
   const { userId } = await auth()
   const { locale } = await params
-  const content = await getPostData(locale as 'es' | 'en')
+  const content = await getPostData(locale)
 
   console.log(content)
 
