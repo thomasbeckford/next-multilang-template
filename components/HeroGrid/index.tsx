@@ -5,11 +5,6 @@ import { useRef } from 'react'
 import Column from './Column'
 import useDeviceType, { DeviceType } from '@/hooks/useDeviceType'
 
-type TitlePart = {
-  text: string
-  highlight: boolean
-}
-
 export default function HeroGrid({ title }: { title: string }) {
   const ref = useRef(null)
   const deviceType = useDeviceType()
