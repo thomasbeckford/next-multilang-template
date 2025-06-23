@@ -1,10 +1,8 @@
-// lib/translationCache.ts
 import redis from '../redis'
 
 export async function getTranslation(locale: string, updatedAt: string) {
   const key = `translation:${locale}:${updatedAt}`
-  const raw = await redis.get(key)
-  return raw ? (JSON.parse(raw) as Record<string, string>) : null
+  return (await redis.get<Record<string, string>>(key)) ?? null
 }
 
 export async function setTranslation(
@@ -13,5 +11,5 @@ export async function setTranslation(
   data: Record<string, string>
 ) {
   const key = `translation:${locale}:${updatedAt}`
-  await redis.set(key, JSON.stringify(data), 'EX', 60 * 60 * 24 * 7) // 7 días
+  await redis.set(key, data, { ex: 60 * 60 * 24 * 7 }) // 7 días
 }
