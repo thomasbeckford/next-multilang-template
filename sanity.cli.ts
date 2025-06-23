@@ -9,6 +9,6 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
 const studioHost =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000/studio'
-    : 'https://next-multilang-template.vercel.app/studio'
+    : 'https://clearspeak.vercel.app/studio'
 
 export default defineCliConfig({ api: { projectId, dataset }, studioHost })

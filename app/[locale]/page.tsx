@@ -11,11 +11,11 @@ import { TypingText } from '@/components/animate-ui/text/typing'
 import { AnimateIcon } from '@/components/animate-ui/icons/icon'
 
 export const metadata: Metadata = getMetadata({
-  title: 'Home | Next Multilang Template',
+  title: 'Home | ClearSpeak',
   description:
-    'This is the homepage of Next Multilang Template, a modern multi-language starter.',
-  url: 'https://next-multilang-template.vercel.app',
-  image: 'https://next-multilang-template.vercel.app/og-image.jpg',
+    'This is the homepage of ClearSpeak, a modern multi-language starter.',
+  url: 'https://clearspeak.vercel.app',
+  image: 'https://clearspeak.vercel.app/og-image.jpg',
 })
 
 export default function HomePage() {
