@@ -3,13 +3,15 @@
 import { useScroll, useTransform, motion } from 'motion/react'
 import { useRef } from 'react'
 import Column from './Column'
-import { useTranslations } from 'next-intl'
 import useDeviceType, { DeviceType } from '@/hooks/useDeviceType'
 
-export default function HeroGrid() {
-  const ref = useRef(null)
-  const t = useTranslations('HomePage')
+type TitlePart = {
+  text: string
+  highlight: boolean
+}
 
+export default function HeroGrid({ title }: { title: string }) {
+  const ref = useRef(null)
   const deviceType = useDeviceType()
 
   const { scrollYProgress } = useScroll({
@@ -20,7 +22,7 @@ export default function HeroGrid() {
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 4.1])
   const rotate = useTransform(scrollYProgress, [0, 1], [-20, 0])
   const opacity = useTransform(scrollYProgress, [0.1, 0.4], [0.1, 0.4])
-
+  console.log('title', title)
   return (
     <section
       ref={ref}
@@ -29,11 +31,7 @@ export default function HeroGrid() {
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
         <div className="z-10 text-center w-4/5 my-16 px-8 relative">
           <h1 className="text-[clamp(3rem,6vw,4.5rem)] leading-[clamp(4rem,7vw,5rem)] font-bold max-w-4xl mx-auto text-shadow-md text-shadow-black">
-            {t.rich('title', {
-              highlight: (chunks) => (
-                <span className="text-primary">{chunks}</span>
-              ),
-            })}
+            {title}
           </h1>
         </div>
 

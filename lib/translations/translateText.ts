@@ -1,6 +1,4 @@
-import { Locale } from '@/lib/constants'
-
-export async function translateText(text: string, to: Locale) {
+export async function translateText(text: string, to: string) {
   if (!text) return 'Error'
 
   try {

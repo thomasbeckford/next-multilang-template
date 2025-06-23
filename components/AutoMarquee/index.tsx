@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import './style.css'
+import locales from '@/i18n/locales'
 
 interface Brand {
   label: string
@@ -12,18 +13,10 @@ const AutoMarquee: React.FC<{
 }> = (props) => {
   let { brands } = props
   if (!brands?.length) {
-    brands = [
-      { label: 'English', imageUrl: 'https://flagcdn.com/us.svg' },
-      { label: 'Español', imageUrl: 'https://flagcdn.com/es.svg' },
-      { label: 'Français', imageUrl: 'https://flagcdn.com/fr.svg' },
-      { label: 'Deutsch', imageUrl: 'https://flagcdn.com/de.svg' },
-      { label: 'Português', imageUrl: 'https://flagcdn.com/br.svg' },
-      { label: 'Italiano', imageUrl: 'https://flagcdn.com/it.svg' },
-      { label: '日本語', imageUrl: 'https://flagcdn.com/jp.svg' },
-      { label: '中文', imageUrl: 'https://flagcdn.com/cn.svg' },
-      { label: '한국어', imageUrl: 'https://flagcdn.com/kr.svg' },
-      { label: 'العربية', imageUrl: 'https://flagcdn.com/sa.svg' },
-    ]
+    brands = locales.map((locale) => ({
+      label: locale.label,
+      imageUrl: locale.imageUrl,
+    }))
   }
 
   const duplicateBrands = [...brands]

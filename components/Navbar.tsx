@@ -1,12 +1,15 @@
 'use client'
 
 import { Link } from '@/i18n/navigation'
-import useLinks from '@/hooks/useLinks'
 import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/nextjs'
 
-export default function Navbar() {
-  const links = useLinks()
+type TranslatedLink = {
+  href: string
+  label: string
+  description: string
+}
 
+export default function Navbar({ links }: { links: TranslatedLink[] }) {
   return (
     <header className="hidden md:flex items-center justify-between border-b bg-transparent">
       <div className="flex items-center gap-8">

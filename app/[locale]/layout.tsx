@@ -10,6 +10,9 @@ import { ScrollProgress } from '@/components/animate-ui/components/scroll-progre
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/Footer'
 import { TanstackQueryProvider } from '@/providers/TanstackQuery'
+import { getTranslatedLinks } from '@/hooks/useLinks'
+
+
 import '@/app/globals.css'
 
 export default async function LocaleLayout({
@@ -20,6 +23,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+  const links = await getTranslatedLinks(locale)
 
   if (!hasLocale(routing.locales, locale)) {
     notFound()
@@ -28,6 +32,8 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
+
+
         <TanstackQueryProvider>
           <ClerkProvider>
             <NextIntlClientProvider locale={locale}>
@@ -43,7 +49,7 @@ export default async function LocaleLayout({
                       LOGO
                     </h1>
                     <MobileNav />
-                    <Navbar />
+                    <Navbar links={links} />
                     <div className="flex gap-2">
                       <LanguageSwitcher />
                       <ThemeSwitcher />

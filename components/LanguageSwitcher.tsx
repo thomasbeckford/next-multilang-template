@@ -1,7 +1,6 @@
 'use client'
 
 import { usePathname, useRouter } from '@/i18n/navigation'
-import { routing } from '@/i18n/routing'
 import { useLocale } from 'next-intl'
 
 import {
@@ -11,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import locales from '@/i18n/locales'
 
 export default function LanguageSwitcher() {
   const router = useRouter()
@@ -24,12 +24,12 @@ export default function LanguageSwitcher() {
   return (
     <Select onValueChange={handleChange} value={locale}>
       <SelectTrigger className="w-[180px]">
-        <SelectValue />
+        <SelectValue placeholder="Select a language" />
       </SelectTrigger>
       <SelectContent>
-        {routing.locales.map((locale) => (
-          <SelectItem key={locale} value={locale}>
-            {locale === 'es' ? '🇪🇸 Español' : '🇺🇸 English'}
+        {locales.map((locale) => (
+          <SelectItem key={locale.value} value={locale.value}>
+            {locale.flag} {locale.label}
           </SelectItem>
         ))}
       </SelectContent>

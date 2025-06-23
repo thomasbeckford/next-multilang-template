@@ -11,11 +11,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
-    messages: {
-      Navbar: (await import(`../messages/${locale}/Navbar.json`)).default,
-      HomePage: (await import(`../messages/${locale}/HomePage.json`)).default,
-      About: (await import(`../messages/${locale}/About.json`)).default,
-      Contact: (await import(`../messages/${locale}/Contact.json`)).default,
-    },
+    messages: {},
   }
 })

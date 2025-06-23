@@ -1,32 +1,44 @@
-import { useTranslations } from 'next-intl'
+import { translateWithCache } from '@/lib/translations/translateWithCache'
 
-const useLinks = () => {
-  const t = useTranslations('Navbar')
+const updatedAt = '2025-06-25' // o un valor fijo que cambies cuando cambie el contenido
+const NAVBAR_TEXTS = {
+  home: 'Home',
+  homeDescription: 'Go back to homepage',
+  about: 'About',
+  aboutDescription: 'Learn more about us',
+  contact: 'Contact',
+  contactDescription: 'Get in touch with us',
+  dashboard: 'Dashboard',
+  dashboardDescription: 'Manage your account',
+}
 
-  const links = [
+export const getTranslatedLinks = async (locale: string) => {
+  const { data } = await translateWithCache({
+    locale,
+    updatedAt,
+    content: NAVBAR_TEXTS,
+  })
+
+  return [
     {
       href: '/',
-      label: t('home'),
-      description: t('homeDescription'),
+      label: data.home,
+      description: data.homeDescription,
     },
     {
       href: '/about',
-      label: t('about'),
-      description: t('aboutDescription'),
+      label: data.about,
+      description: data.aboutDescription,
     },
     {
       href: '/contact',
-      label: t('contact'),
-      description: t('contactDescription'),
+      label: data.contact,
+      description: data.contactDescription,
     },
     {
       href: '/dashboard',
-      label: t('dashboard'),
-      description: t('dashboardDescription'),
+      label: data.dashboard,
+      description: data.dashboardDescription,
     },
   ]
-
-  return links
 }
-
-export default useLinks

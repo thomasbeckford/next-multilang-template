@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 
 export default function ContactPage({ contactData }: any) {
-  console.log(contactData)
   return (
     <section id="contact" className="md:space-y-20 space-y-6">
       <Container className="animate-in fade-in space-y-4">

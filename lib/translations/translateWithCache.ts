@@ -1,4 +1,3 @@
-import { Locale } from '@/lib/constants'
 import { getTranslation, setTranslation } from './translationsCache'
 import { translateText } from './translateText'
 
@@ -14,7 +13,7 @@ export async function translateWithCache({
   updatedAt,
   content,
 }: {
-  locale: Locale
+  locale: string
   updatedAt: string
   content: TranslatableContent
 }): Promise<TranslatedResult> {

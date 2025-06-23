@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { Metadata } from 'next'
 import getMetadata from '@/lib/seo'
-import { getContactData } from '@/sanity/queries'
-import { Locale } from '@/lib/constants'
+import { getContactData } from '@/sanity/queries/getContactData'
 import Contact from '@/components/screens/Contact'
 
 export const metadata: Metadata = getMetadata({
@@ -22,7 +21,7 @@ export default async function ContactPage({
 }) {
   const { locale } = await params
 
-  const contactData = await getContactData(locale as Locale)
+  const contactData = await getContactData(locale)
 
   if (!hasLocale(routing.locales, locale)) {
     notFound()
