@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://clearspeak.vercel.app/sitemap.xml
+Sitemap: https://clearkspeak1.vercel.app/sitemap.xml

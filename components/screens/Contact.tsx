@@ -23,10 +23,10 @@ export default function ContactPage({ contactData }: any) {
             <p className="text-muted-foreground">
               Reach us at{' '}
               <a
-                href="mailto:hello@clearspeak.app"
+                href="mailto:hello@clearkspeak1.app"
                 className="text-primary underline underline-offset-4"
               >
-                hello@clearspeak.app
+                hello@clearkspeak1.app
               </a>
             </p>
             <p className="text-muted-foreground">
@@ -40,7 +40,7 @@ export default function ContactPage({ contactData }: any) {
           <div className="text-muted-foreground">
             Prefer async?{' '}
             <a
-              href="https://clearspeak.app/support"
+              href="https://clearkspeak1.app/support"
               className="text-primary underline underline-offset-4"
             >
               Submit a ticket
@@ -83,7 +83,7 @@ export default function ContactPage({ contactData }: any) {
         <p className="text-muted-foreground text-sm">
           Looking for partnerships or enterprise plans?{' '}
           <a
-            href="mailto:partners@clearspeak.app"
+            href="mailto:partners@clearkspeak1.app"
             className="underline text-primary"
           >
             Contact us directly

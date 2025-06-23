@@ -7,8 +7,8 @@ export const metadata: Metadata = getMetadata({
   title: 'About | ClearSpeak',
   description:
     'Learn more about ClearSpeak — an AI-powered platform for multilingual websites.',
-  url: 'https://clearspeak.app/about',
-  image: 'https://clearspeak.app/og-image.jpg',
+  url: 'https://clearkspeak1.app/about',
+  image: 'https://clearkspeak1.app/og-image.jpg',
 })
 
 export default function AboutPage() {

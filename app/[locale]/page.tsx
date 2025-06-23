@@ -14,8 +14,8 @@ export const metadata: Metadata = getMetadata({
   title: 'Home | ClearSpeak',
   description:
     'This is the homepage of ClearSpeak, a modern multi-language starter.',
-  url: 'https://clearspeak.vercel.app',
-  image: 'https://clearspeak.vercel.app/og-image.jpg',
+  url: 'https://clearkspeak1.vercel.app',
+  image: 'https://clearkspeak1.vercel.app/og-image.jpg',
 })
 
 export default function HomePage() {

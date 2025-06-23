@@ -11,8 +11,8 @@ export const metadata: Metadata = getMetadata({
   title: 'Contact | ClearSpeak',
   description:
     'Contact the ClearSpeak team to learn more about multilingual website solutions.',
-  url: 'https://clearspeak.app/contact',
-  image: 'https://clearspeak.app/og-image.jpg',
+  url: 'https://clearkspeak1.app/contact',
+  image: 'https://clearkspeak1.app/og-image.jpg',
 })
 
 export default async function ContactPage({
