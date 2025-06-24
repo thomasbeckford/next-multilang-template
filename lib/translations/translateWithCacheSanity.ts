@@ -17,7 +17,6 @@ export async function translateWithCacheSanity({
   doNotTranslate?: string[]
 }): Promise<{ data: TranslatableContent; translated: boolean }> {
   const flatContent = flatten(content) as Record<string, string>
-  const cacheKey = `${locale}:${updatedAt}`
 
   const cached = await getTranslation(locale, updatedAt)
   if (cached && Object.values(cached).every((v) => v)) {
