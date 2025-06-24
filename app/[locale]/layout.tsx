@@ -11,6 +11,8 @@ import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/Footer'
 import { TanstackQueryProvider } from '@/providers/TanstackQuery'
 import { getTranslatedLinks } from '@/hooks/useLinks'
+import { Analytics } from '@vercel/analytics/next'
+
 import '@/app/globals.css'
 
 export default async function LocaleLayout({
@@ -64,6 +66,7 @@ export default async function LocaleLayout({
             </NextIntlClientProvider>
           </ClerkProvider>
         </TanstackQueryProvider>
+        <Analytics />
       </body>
     </html>
   )
