@@ -16,17 +16,6 @@ export const metadata: Metadata = getMetadata({
   image: 'https://clearkspeak1.app/og-image.jpg',
 })
 
-async function getTranslatedContent(locale: string) {
-  const flatContent = CONTACT_TEXTS
-
-  const { data } = await translateWithCache({
-    locale,
-    updatedAt: 'contact_page',
-    content: flatContent,
-  })
-
-  return data
-}
 
 // componente server
 export default async function ContactPage({
@@ -35,17 +24,23 @@ export default async function ContactPage({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  const t = await getTranslatedContent(locale)
+
+  const { data } = await translateWithCache({
+    locale,
+    updatedAt: 'contact_page',
+    content: CONTACT_TEXTS,
+  })
+
   return (
     <section id="contact" className="md:space-y-20 space-y-6">
       <Container className="animate-in fade-in space-y-4">
-        <h1 className="text-4xl font-bold">{t.title}</h1>
-        <p className="text-muted-foreground">{t.description}</p>
+        <h1 className="text-4xl font-bold">{data.title}</h1>
+        <p className="text-muted-foreground">{data.description}</p>
       </Container>
 
       <Card>
         <div className="space-y-6 text-center">
-          <h2 className="text-2xl font-semibold">{t.section1Title}</h2>
+          <h2 className="text-2xl font-semibold">{data.section1Title}</h2>
 
           <div className="space-y-2">
             <p className="text-muted-foreground">
@@ -83,7 +78,7 @@ export default async function ContactPage({
 
       <Container className="space-y-8">
         <h2 className="text-2xl font-semibold text-center">
-          {t.section2Title}
+          {data.section2Title}
         </h2>
         <form className="max-w-xl mx-auto space-y-4">
           <Input type="text" placeholder="Your name" />
@@ -96,7 +91,7 @@ export default async function ContactPage({
       </Container>
 
       <Container className="text-center space-y-4">
-        <h2 className="text-2xl font-semibold">{t.section3Title}</h2>
+        <h2 className="text-2xl font-semibold">{data.section3Title}</h2>
         <p className="text-muted-foreground">
           <strong>Q:</strong> Do I need to install anything to use ClearSpeak?
           <br />
@@ -111,12 +106,12 @@ export default async function ContactPage({
 
       <Container className="text-center pt-10">
         <p className="text-muted-foreground text-sm">
-          {t.section3Title}{' '}
+          {data.section3Title}{' '}
           <a
             href="mailto:partners@clearkspeak1.app"
             className="underline text-primary"
           >
-            {t.section3Body}
+            {data.section3Body}
           </a>
         </p>
       </Container>

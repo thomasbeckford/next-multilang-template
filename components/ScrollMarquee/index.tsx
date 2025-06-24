@@ -2,45 +2,13 @@
 
 import { motion, useScroll, useTransform, MotionValue } from 'motion/react'
 
-export const wordsLine1 = [
-  'frontend',
-  '·',
-  'responsive design',
-  '·',
-  'performance',
-  '·',
-  'user experience',
-  '·',
-  'accessibility',
-  '·',
-  'javascript',
-  '·',
-  'typescript',
-  '·',
-  'react',
-  '·',
-]
-
-export const wordsLine2 = [
-  'web apps',
-  '·',
-  'next.js',
-  '·',
-  'seo optimization',
-  '·',
-  'ui design',
-  '·',
-  'tailwind css',
-  '·',
-  'api integration',
-  '·',
-  'auth systems',
-  '·',
-  'cms ready',
-  '·',
-]
-
-const Marquee = () => {
+const Marquee = ({
+  wordsLine1,
+  wordsLine2,
+}: {
+  wordsLine1: string[]
+  wordsLine2: string[]
+}) => {
   const { scrollYProgress } = useScroll()
   const x1 = useTransform(scrollYProgress, [0, 1], ['0%', '-100%'])
   const x2 = useTransform(scrollYProgress, [0, 1], ['-100%', '0%'])
