@@ -18,50 +18,19 @@ export const metadata: Metadata = getMetadata({
   image: 'https://clearkspeak1.vercel.app/og-image.jpg',
 })
 
-async function getTranslatedContent(locale: string, updatedAt: string) {
-  const flatContent = {
-    'homePage.hero.title': HOMEPAGE_TEXTS.title,
-    'homePage.features.label': HOMEPAGE_TEXTS.features,
-    ...Object.fromEntries(
-      HOMEPAGE_TEXTS.featuresList.flatMap((item, i) => [
-        [`homePage.features.list.${i}.title`, item.title],
-        [`homePage.features.list.${i}.description`, item.description],
-      ])
-    ),
-  }
-
-  const { data } = await translateWithCache({
-    locale,
-    updatedAt,
-    content: flatContent,
-  })
-
-  const featuresList = HOMEPAGE_TEXTS.featuresList.map((item, i) => ({
-    title: data[`homePage.features.list.${i}.title`],
-    description: data[`homePage.features.list.${i}.description`],
-    icon: item.icon,
-  }))
-
-  const translations = {
-    hero: {
-      title: data['homePage.hero.title'],
-    },
-    features: {
-      label: data['homePage.features.label'],
-      featuresList,
-    },
-  }
-
-  return translations
-}
-
 export default async function HomePage({
   params,
 }: {
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  const { features, hero } = await getTranslatedContent(locale, 'home_page12')
+
+  const { data } = await translateWithCache({
+    locale,
+    updatedAt: 'home_page',
+    content: HOMEPAGE_TEXTS,
+    doNotTranslate: ['icon'],
+  })
 
   const { data: scrollMarqueeData } = await translateWithCache({
     locale,
@@ -74,14 +43,14 @@ export default async function HomePage({
 
   return (
     <section id="home" className="md:space-y-20 space-y-6">
-      <HeroGrid title={hero.title} />
+      <HeroGrid title={data.title} />
 
       <Container>
         <AutoMarquee />
       </Container>
 
       <Container>
-        <Features features={features} />
+        <Features title={data.features} features={data.featuresList} />
       </Container>
 
       <ScrollMarquee

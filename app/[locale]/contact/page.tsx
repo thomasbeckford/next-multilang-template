@@ -16,7 +16,6 @@ export const metadata: Metadata = getMetadata({
   image: 'https://clearkspeak1.app/og-image.jpg',
 })
 
-
 // componente server
 export default async function ContactPage({
   params,

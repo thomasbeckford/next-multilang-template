@@ -3,16 +3,22 @@ import { iconMap } from '@/lib/iconMap'
 import { AnimateIcon } from '@/components/animate-ui/icons/icon'
 import { TypingText } from '@/components/animate-ui/text/typing'
 
-export default function Features({ features }: { features: any }) {
+export default function Features({
+  title,
+  features,
+}: {
+  title: string
+  features: Record<string, any>
+}) {
   console.log('featuresList', features)
   return (
     <>
       <h2 className="text-3xl font-bold mb-10 text-center">
-        <TypingText inView text={`✨ ${features.label}`} cursor />
+        <TypingText inView text={`✨ ${title}`} cursor />
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <MotionHighlight hover className="rounded-xl">
-          {features.featuresList.map((feature: any, i: any) => {
+          {features?.map((feature: any, i: any) => {
             const Icon = iconMap[feature.icon as keyof typeof iconMap]
             return (
               <div key={i} className="p-4 flex flex-col border rounded-xl">

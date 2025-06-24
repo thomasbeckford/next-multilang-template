@@ -1,4 +1,4 @@
-export const wordsLine1 = [
+export const wordsLine1: string[] = [
   'frontend development',
   '·',
   'responsive design',
@@ -17,7 +17,7 @@ export const wordsLine1 = [
   '·',
 ]
 
-export const wordsLine2 = [
+export const wordsLine2: string[] = [
   'web apps',
   '·',
   'next.js',
