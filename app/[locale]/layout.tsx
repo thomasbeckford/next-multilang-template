@@ -12,6 +12,7 @@ import Footer from '@/components/Footer'
 import { TanstackQueryProvider } from '@/providers/TanstackQuery'
 import { getTranslatedLinks } from '@/hooks/useLinks'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import '@/app/globals.css'
 
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
           </ClerkProvider>
         </TanstackQueryProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
