@@ -1,3 +1,6 @@
+import { Redis as UpstashRedis } from '@upstash/redis'
+import IORedis from 'ioredis'
+
 const isProd = process.env.NODE_ENV === 'production'
 
 let redis: {
@@ -7,32 +10,35 @@ let redis: {
 
 if (isProd) {
   console.log('Using Upstash Redis')
-  // Producción con Upstash
-  const { Redis } = require('@upstash/redis')
-  const upstash = Redis.fromEnv()
+  const upstash = UpstashRedis.fromEnv()
 
   redis = {
-    get: (key) => upstash.get(key),
-    set: (key, value, options) =>
-      upstash.set(key, value, options ?? { ex: 60 * 60 * 24 * 7 }),
+    get: async <T = any>(key: string): Promise<T | null> => {
+      return await upstash.get<T>(key)
+    },
+    set: async (key, value, options) => {
+      if (options?.ex) {
+        await upstash.set(key, value, { ex: options.ex })
+      } else {
+        await upstash.set(key, value)
+      }
+    },
   }
 } else {
   console.log('Using local Redis')
-  // Local con ioredis
-  const IORedis = require('ioredis')
   const localRedis = new IORedis()
 
   redis = {
-    get: async (key) => {
+    get: async <T = any>(key: string): Promise<T | null> => {
       const raw = await localRedis.get(key)
-      return raw ? JSON.parse(raw) : null
+      return raw ? (JSON.parse(raw) as T) : null
     },
     set: async (key, value, options) => {
-      await localRedis.set(
-        key,
-        JSON.stringify(value),
-        ...(options?.ex ? ['EX', options.ex] : [])
-      )
+      const args: (string | number)[] = [key, JSON.stringify(value)]
+      if (options?.ex) {
+        args.push('EX', options.ex)
+      }
+      await localRedis.set(...(args as [string, string, ...any[]]))
     },
   }
 }

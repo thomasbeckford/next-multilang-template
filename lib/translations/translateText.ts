@@ -2,7 +2,12 @@ export async function translateText(text: string, to: string | string[]) {
   if (!text) return 'Error'
 
   try {
-    console.log('🌍 Traducción solicitada a OPENAI:', text)
+    console.log(`🔁 Traduciendo: "${text}" → ${to}`)
+
+    if (!process.env.OPENAI_API_KEY) {
+      console.error('❌ Falta OPENAI_API_KEY')
+      return 'Error'
+    }
     const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -28,16 +33,16 @@ export async function translateText(text: string, to: string | string[]) {
     const json = await res.json()
     const translated = json?.choices?.[0]?.message?.content
 
-    console.log('🌍 Traducción recibida:', translated)
+    console.log(`🌍 Traducción recibida: ${translated}`)
 
     if (!translated || typeof translated !== 'string') {
-      console.warn('⚠️ Traducción no válida:', json)
+      console.warn(`⚠️ Traducción no válida: ${json}`)
       return 'Error'
     }
 
     return translated
   } catch (e) {
-    console.error('❌ Error al traducir con OpenAI:', e)
+    console.error(`❌ Error al traducir con OpenAI: ${e}`)
     return 'Error'
   }
 }

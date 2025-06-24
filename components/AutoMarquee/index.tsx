@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import './style.css'
 import locales from '@/i18n/locales'
+import './style.css'
 
 interface Brand {
   label: string
@@ -37,7 +37,7 @@ const AutoMarquee: React.FC<{
       <div className="marquee-track">
         {duplicateBrands.map((brand, index) => (
           <div
-            key={brand.label}
+            key={brand.label + index}
             className="marquee-item"
             style={
               {

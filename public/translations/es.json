@@ -2,9 +2,9 @@
   "ABOUT_TEXTS": {
     "title": "Sobre nosotros",
     "subtitle": "Aprende cómo ClearSpeak está construyendo una web multilingüe.",
-    "section1Title": "Nuestra Visión",
+    "section1Title": "Nuestra Visión Principal",
     "section1Body": "Creemos que el idioma no debería ser una barrera para acceder a la información.",
-    "section2Title": "Nuestra Tecnología",
+    "section2Title": "Nuestras Tecnologías",
     "section2Body": "Utilizamos inteligencia artificial de vanguardia para ofrecer traducciones rápidas y precisas.",
     "section3Title": "Nuestro equipo",
     "section3Body": "Somos un equipo de desarrolladores, lingüistas y diseñadores con un objetivo compartido.",
@@ -25,13 +25,13 @@
         "icon": "Paintbrush"
       },
       {
-        "title": "Amigable con SEO",
+        "title": "Amigable para SEO",
         "description": "Metadatos integrados y marcado semántico.",
         "icon": "ExternalLink"
       },
       {
         "title": "Accesible",
-        "description": "Diseño y interacciones compatibles con WCAG.",
+        "description": "Diseño e interacciones compatibles con WCAG.",
         "icon": "RefreshCcw"
       }
     ]
@@ -63,13 +63,13 @@
     "·",
     "diseño de interfaz de usuario",
     "·",
-    "tailwind css",
+    "css de tailwind",
     "·",
     "Integración de API",
     "·",
     "sistemas de autenticación",
     "·",
-    "cms listo",
+    "listo para cms",
     "·"
   ],
   "CONTACT_TEXTS": {
@@ -89,7 +89,7 @@
     "about": "Acerca de",
     "aboutDescription": "Aprende más sobre nosotros",
     "contact": "Contacto",
-    "contactDescription": "Póngase en contacto con nosotros",
+    "contactDescription": "Ponte en contacto con nosotros",
     "dashboard": "Tablero",
     "dashboardDescription": "Administra tu cuenta"
   }

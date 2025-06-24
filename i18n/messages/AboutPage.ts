@@ -1,10 +1,10 @@
 export const ABOUT_TEXTS = {
   title: 'About Us',
   subtitle: 'Learn how ClearSpeak is building a multilingual web.',
-  section1Title: 'Our Vision',
+  section1Title: 'Our Main Vision',
   section1Body:
     'We believe that language should not be a barrier to access information.',
-  section2Title: 'Our Technology',
+  section2Title: 'Our Technologies',
   section2Body:
     'We use cutting-edge AI to deliver fast and accurate translations.',
   section3Title: 'Our Team',

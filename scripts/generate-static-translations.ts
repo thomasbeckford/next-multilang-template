@@ -5,7 +5,7 @@ dotenv.config()
 
 import fs from 'fs/promises'
 import path from 'path'
-import { translateWithOpenAIOnly } from '@/lib/translations/translateWithOpenAIOnly'
+import { translateWithCache } from '@/lib/translations/translateWithCache'
 import { ALL_TEXTS } from '../i18n/messages'
 import locales from '@/i18n/locales'
 
@@ -15,7 +15,7 @@ async function generate() {
   await fs.mkdir(OUTPUT_DIR, { recursive: true })
 
   for (const locale of locales) {
-    const { data } = await translateWithOpenAIOnly({
+    const { data } = await translateWithCache({
       locale: locale.value,
       content: ALL_TEXTS,
       doNotTranslate: ['icon'],
@@ -25,6 +25,9 @@ async function generate() {
     await fs.writeFile(filePath, JSON.stringify(data, null, 2))
     console.log(`✅ Traducción lista: ${filePath}`)
   }
+
+  // ✅ Finaliza solo cuando todo termina bien
+  process.exit(0)
 }
 
 generate().catch((err) => {
