@@ -24,6 +24,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+
   const links = await getTranslatedLinks(locale)
 
   if (!hasLocale(routing.locales, locale)) {

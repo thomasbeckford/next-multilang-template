@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs/server'
 import { Container } from '@/components/ui/container'
 import Link from 'next/link'
 import { getPostData } from '@/sanity/queries/getPostData'
-import { translateWithCache } from '@/lib/translations/translateWithCache'
+import { translateWithCacheSanity } from '@/lib/translations/translateWithCacheSanity'
 
 const UI_TEXTS = {
   welcome: 'Welcome to your dashboard',
@@ -19,7 +19,7 @@ export default async function DashboardPage({
   const { locale } = await params
   const content = await getPostData(locale)
 
-  const { data: t } = await translateWithCache({
+  const { data: DASHBOARD_PAGE, translated } = await translateWithCacheSanity({
     locale,
     updatedAt: 'dashboard_page',
     content: UI_TEXTS,
@@ -28,9 +28,9 @@ export default async function DashboardPage({
   return (
     <Container className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">{t.welcome}</h1>
+        <h1 className="text-2xl font-bold">{DASHBOARD_PAGE.welcome}</h1>
         <p className="text-muted-foreground">
-          {t.userId}: {userId}
+          {DASHBOARD_PAGE.userId}: {userId}
         </p>
       </div>
 
@@ -43,9 +43,9 @@ export default async function DashboardPage({
               </h2>
             </Link>
             <p className="text-sm text-muted-foreground">{post.publishedAt}</p>
-            {post.translated && (
+            {translated && (
               <p className="text-sm italic text-green-400">
-                {t.autoTranslated}
+                {DASHBOARD_PAGE.autoTranslated}
               </p>
             )}
           </li>

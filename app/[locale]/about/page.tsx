@@ -1,8 +1,7 @@
 import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
-import { translateWithCache } from '@/lib/translations/translateWithCache'
-import { ABOUT_TEXTS } from '@/i18n/messages/AboutPage'
 import { type Metadata } from 'next'
+import getPublicTranslations from '@/lib/translations/getPublicTranslations'
 
 export const metadata: Metadata = getMetadata({
   title: 'About | ClearSpeak',
@@ -12,19 +11,6 @@ export const metadata: Metadata = getMetadata({
   image: 'https://clearkspeak1.app/og-image.jpg',
 })
 
-// traducción + cache
-async function getTranslatedAboutContent(locale: string) {
-  const flatContent = ABOUT_TEXTS
-
-  const { data } = await translateWithCache({
-    locale,
-    updatedAt: 'about_page',
-    content: flatContent,
-  })
-
-  return data
-}
-
 // componente server
 export default async function AboutPage({
   params,
@@ -32,32 +18,40 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  const t = await getTranslatedAboutContent(locale)
+  const { ABOUT_TEXTS } = await getPublicTranslations(locale)
 
   return (
     <section id="about" className="md:space-y-20 space-y-6">
       <Container className="animate-in fade-in space-y-6">
-        <h1 className="text-4xl font-bold">{t.title}</h1>
-        <p className="text-xl text-muted-foreground">{t.subtitle}</p>
+        <h1 className="text-4xl font-bold">{ABOUT_TEXTS.title}</h1>
+        <p className="text-xl text-muted-foreground">{ABOUT_TEXTS.subtitle}</p>
       </Container>
 
       <Container className="space-y-10">
         <div>
-          <h2 className="text-2xl font-semibold">{t.section1Title}</h2>
-          <p className="text-muted-foreground">{t.section1Body}</p>
+          <h2 className="text-2xl font-semibold">
+            {ABOUT_TEXTS.section1Title}
+          </h2>
+          <p className="text-muted-foreground">{ABOUT_TEXTS.section1Body}</p>
         </div>
         <div>
-          <h2 className="text-2xl font-semibold">{t.section2Title}</h2>
-          <p className="text-muted-foreground">{t.section2Body}</p>
+          <h2 className="text-2xl font-semibold">
+            {ABOUT_TEXTS.section2Title}
+          </h2>
+          <p className="text-muted-foreground">{ABOUT_TEXTS.section2Body}</p>
         </div>
         <div>
-          <h2 className="text-2xl font-semibold">{t.section3Title}</h2>
-          <p className="text-muted-foreground">{t.section3Body}</p>
+          <h2 className="text-2xl font-semibold">
+            {ABOUT_TEXTS.section3Title}
+          </h2>
+          <p className="text-muted-foreground">{ABOUT_TEXTS.section3Body}</p>
         </div>
       </Container>
 
       <Container>
-        <p className="text-center text-lg text-primary font-medium">{t.cta}</p>
+        <p className="text-center text-lg text-primary font-medium">
+          {ABOUT_TEXTS.cta}
+        </p>
       </Container>
     </section>
   )

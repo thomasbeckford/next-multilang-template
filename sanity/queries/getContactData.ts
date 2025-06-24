@@ -1,11 +1,11 @@
 import { sanityClient } from '../client'
-import { translateWithCache } from '@/lib/translations/translateWithCache'
+import { translateWithCacheSanity } from '@/lib/translations/translateWithCacheSanity'
 
 export async function getContactData(locale: string) {
   const query = `*[_type == "contact"][0]`
   const data = await sanityClient.fetch(query)
 
-  return translateWithCache({
+  return translateWithCacheSanity({
     locale,
     updatedAt: data._updatedAt,
     content: {

@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "Sobre nós",
+    "subtitle": "Saiba como o ClearSpeak está construindo uma web multilíngue.",
+    "section1Title": "Nossa Visão",
+    "section1Body": "Acreditamos que a linguagem não deve ser uma barreira para acessar informações.",
+    "section2Title": "Nossa Tecnologia",
+    "section2Body": "Usamos inteligência artificial de ponta para fornecer traduções rápidas e precisas.",
+    "section3Title": "Nossa Equipe",
+    "section3Body": "Somos uma equipe de desenvolvedores, linguistas e designers com um objetivo em comum.",
+    "cta": "Quer trabalhar conosco? Entre em contato!"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "Construa seu aplicativo multilíngue em segundos",
+    "features": "Recursos",
+    "featuresList": [
+      {
+        "title": "Tradução em tempo real",
+        "description": "Traduzir conteúdo instantaneamente enquanto os usuários navegam.",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "Totalmente Responsivo",
+        "description": "Funciona perfeitamente em todos os tamanhos de tela.",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "Amigável para SEO",
+        "description": "Metadados incorporados e marcação semântica.",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "Acessível",
+        "description": "Design e interações compatíveis com o WCAG.",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "desenvolvimento de frontend",
+    "·",
+    "design responsivo",
+    "·",
+    "desempenho",
+    "·",
+    "experiência do usuário",
+    "·",
+    "acessibilidade",
+    "·",
+    "javascript",
+    "·",
+    "typescript",
+    "·",
+    "reagir",
+    "·"
+  ],
+  "wordsLine2": [
+    "aplicativos da web",
+    "·",
+    "next.js",
+    "·",
+    "otimização de SEO",
+    "·",
+    "design de interface do usuário",
+    "·",
+    "css tailwind",
+    "·",
+    "integração de API",
+    "·",
+    "sistemas de autenticação",
+    "·",
+    "cms pronto",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "Entre em contato",
+    "description": "Entre em contato conosco para quaisquer dúvidas ou perguntas.",
+    "section1Title": "Nossa Visão",
+    "section1Body": "Acreditamos que a linguagem não deve ser uma barreira para acessar informações.",
+    "section2Title": "Nossa Tecnologia",
+    "section2Body": "Nós usamos inteligência artificial de ponta para fornecer traduções rápidas e precisas.",
+    "section3Title": "Nossa Equipe",
+    "section3Body": "Somos uma equipe de desenvolvedores, linguistas e designers com um objetivo em comum.",
+    "cta": "Quer trabalhar conosco? Entre em contato!"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "Casa",
+    "homeDescription": "Voltar para a página inicial",
+    "about": "Sobre",
+    "aboutDescription": "Saiba mais sobre nós",
+    "contact": "Contato",
+    "contactDescription": "Entre em contato conosco",
+    "dashboard": "Painel",
+    "dashboardDescription": "Gerencie sua conta"
+  }
+}

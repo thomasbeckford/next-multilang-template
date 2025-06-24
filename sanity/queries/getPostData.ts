@@ -1,5 +1,5 @@
 import { sanityClient } from '../client'
-import { translateWithCache } from '@/lib/translations/translateWithCache'
+import { translateWithCacheSanity } from '@/lib/translations/translateWithCacheSanity'
 
 export async function getPostData(locale: string) {
   const query = `*[_type == "post"]`
@@ -14,7 +14,7 @@ export async function getPostData(locale: string) {
           .join('\n\n'),
       }
 
-      const { data } = await translateWithCache({
+      const { data } = await translateWithCacheSanity({
         locale,
         updatedAt: post._updatedAt || post._createdAt,
         content: flatContent,

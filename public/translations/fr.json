@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "À propos de nous",
+    "subtitle": "Découvrez comment ClearSpeak construit un web multilingue.",
+    "section1Title": "Notre vision",
+    "section1Body": "Nous croyons que la langue ne devrait pas être un obstacle à l'accès à l'information.",
+    "section2Title": "Notre technologie",
+    "section2Body": "Nous utilisons une intelligence artificielle de pointe pour fournir des traductions rapides et précises.",
+    "section3Title": "Notre équipe",
+    "section3Body": "Nous sommes une équipe de développeurs, linguistes et designers avec un objectif commun.",
+    "cta": "Vous voulez travailler avec nous ? Contactez-nous !"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "Construisez votre application multilingue en quelques secondes",
+    "features": "Fonctionnalités",
+    "featuresList": [
+      {
+        "title": "Traduction en temps réel",
+        "description": "Traduisez le contenu instantanément pendant que les utilisateurs naviguent.",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "Entièrement réactif",
+        "description": "Fonctionne parfaitement sur toutes les tailles d'écran.",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "Convivial pour le référencement (SEO)",
+        "description": "Métadonnées intégrées et balisage sémantique.",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "Accessible",
+        "description": "Conception et interactions conformes à la WCAG.",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "développement frontend",
+    "·",
+    "conception adaptative",
+    "·",
+    "performance",
+    "·",
+    "expérience utilisateur",
+    "·",
+    "accessibilité",
+    "·",
+    "javascript",
+    "·",
+    "typescript",
+    "·",
+    "réagir",
+    "·"
+  ],
+  "wordsLine2": [
+    "applications web",
+    "·",
+    "next.js",
+    "·",
+    "optimisation du référencement naturel",
+    "·",
+    "conception d'interface utilisateur",
+    "·",
+    "css tailwind",
+    "·",
+    "Intégration d'API",
+    "·",
+    "systèmes d'authentification",
+    "·",
+    "prêt pour le CMS",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "Contactez-nous",
+    "description": "Contactez-nous pour toute demande ou question.",
+    "section1Title": "Notre vision",
+    "section1Body": "Nous croyons que la langue ne devrait pas être un obstacle à l'accès à l'information.",
+    "section2Title": "Notre technologie",
+    "section2Body": "Nous utilisons une intelligence artificielle de pointe pour fournir des traductions rapides et précises.",
+    "section3Title": "Notre équipe",
+    "section3Body": "Nous sommes une équipe de développeurs, de linguistes et de designers ayant un objectif commun.",
+    "cta": "Vous voulez travailler avec nous ? Contactez-nous !"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "Accueil",
+    "homeDescription": "Retourner à la page d'accueil",
+    "about": "À propos",
+    "aboutDescription": "Apprenez-en plus sur nous",
+    "contact": "Contact",
+    "contactDescription": "Entrez en contact avec nous",
+    "dashboard": "Tableau de bord",
+    "dashboardDescription": "Gérez votre compte"
+  }
+}

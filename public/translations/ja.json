@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "私たちについて",
+    "subtitle": "ClearSpeakが多言語ウェブを構築している方法を学びます。",
+    "section1Title": "私たちのビジョン",
+    "section1Body": "私たちは、言語が情報にアクセスする障壁となるべきではないと考えています。",
+    "section2Title": "私たちのテクノロジー",
+    "section2Body": "最新のAIを使用して、迅速かつ正確な翻訳を提供しています。",
+    "section3Title": "私たちのチーム",
+    "section3Body": "私たちは、共通の目標を持つ開発者、言語学者、デザイナーのチームです。",
+    "cta": "私たちと一緒に働きたいですか？お問い合わせください！"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "数秒でマルチリンガルアプリを構築します。",
+    "features": "特徴",
+    "featuresList": [
+      {
+        "title": "リアルタイム翻訳",
+        "description": "ユーザーがブラウズする際にコンテンツを即座に翻訳します。",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "完全に応答性があります。",
+        "description": "すべての画面サイズで完璧に機能します。",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "SEO フレンドリー",
+        "description": "組み込みメタデータと意味マークアップ。",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "アクセス可能",
+        "description": "WCAGに準拠したデザインとインタラクション。",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "フロントエンド開発",
+    "·",
+    "レスポンシブデザイン",
+    "·",
+    "パフォーマンス",
+    "·",
+    "ユーザーエクスペリエンス",
+    "·",
+    "アクセシビリティ",
+    "·",
+    "JavaScript",
+    "·",
+    "TypeScript",
+    "·",
+    "リアクト",
+    "·"
+  ],
+  "wordsLine2": [
+    "ウェブアプリ",
+    "·",
+    "次の.js",
+    "·",
+    "SEO 最適化",
+    "·",
+    "UIデザイン",
+    "·",
+    "Tailwind CSS",
+    "·",
+    "API 統合",
+    "·",
+    "認証システム",
+    "·",
+    "cms 準備完了",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "お問い合わせ",
+    "description": "お問い合わせや質問がある場合は、お気軽にお問い合わせください。",
+    "section1Title": "私たちのビジョン",
+    "section1Body": "私たちは、言語が情報にアクセスする障壁になるべきではないと考えています。",
+    "section2Title": "私たちのテクノロジー",
+    "section2Body": "最新のAIを使用して、迅速かつ正確な翻訳を提供しています。",
+    "section3Title": "私たちのチーム",
+    "section3Body": "私たちは、共通の目標を持つ開発者、言語学者、デザイナーのチームです。",
+    "cta": "私たちと一緒に働きたいですか？お問い合わせください！"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "家",
+    "homeDescription": "ホームページに戻る",
+    "about": "約束",
+    "aboutDescription": "私たちについてもっと詳しく知る",
+    "contact": "連絡",
+    "contactDescription": "お問い合わせください",
+    "dashboard": "ダッシュボード",
+    "dashboardDescription": "アカウントを管理してください。"
+  }
+}

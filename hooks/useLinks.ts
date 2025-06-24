@@ -1,44 +1,28 @@
-import { translateWithCache } from '@/lib/translations/translateWithCache'
-
-const updatedAt = '2025-06-25' // o un valor fijo que cambies cuando cambie el contenido
-const NAVBAR_TEXTS = {
-  home: 'Home',
-  homeDescription: 'Go back to homepage',
-  about: 'About',
-  aboutDescription: 'Learn more about us',
-  contact: 'Contact',
-  contactDescription: 'Get in touch with us',
-  dashboard: 'Dashboard',
-  dashboardDescription: 'Manage your account',
-}
+import getPublicTranslations from '@/lib/translations/getPublicTranslations'
 
 export const getTranslatedLinks = async (locale: string) => {
-  const { data } = await translateWithCache({
-    locale,
-    updatedAt,
-    content: NAVBAR_TEXTS,
-  })
+  const { NAVBAR_TEXTS } = await getPublicTranslations(locale)
 
   return [
     {
       href: '/',
-      label: data.home,
-      description: data.homeDescription,
+      label: NAVBAR_TEXTS.home,
+      description: NAVBAR_TEXTS.homeDescription,
     },
     {
       href: '/about',
-      label: data.about,
-      description: data.aboutDescription,
+      label: NAVBAR_TEXTS.about,
+      description: NAVBAR_TEXTS.aboutDescription,
     },
     {
       href: '/contact',
-      label: data.contact,
-      description: data.contactDescription,
+      label: NAVBAR_TEXTS.contact,
+      description: NAVBAR_TEXTS.contactDescription,
     },
     {
       href: '/dashboard',
-      label: data.dashboard,
-      description: data.dashboardDescription,
+      label: NAVBAR_TEXTS.dashboard,
+      description: NAVBAR_TEXTS.dashboardDescription,
     },
   ]
 }

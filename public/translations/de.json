@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "Über uns",
+    "subtitle": "Erfahren Sie, wie ClearSpeak ein mehrsprachiges Web aufbaut.",
+    "section1Title": "Unsere Vision",
+    "section1Body": "Wir glauben, dass Sprache kein Hindernis für den Zugang zu Informationen sein sollte.",
+    "section2Title": "Unsere Technologie",
+    "section2Body": "Wir verwenden hochmoderne KI, um schnelle und genaue Übersetzungen zu liefern.",
+    "section3Title": "Unser Team",
+    "section3Body": "Wir sind ein Team von Entwicklern, Linguisten und Designern mit einem gemeinsamen Ziel.",
+    "cta": "Möchten Sie mit uns arbeiten? Nehmen Sie Kontakt auf!"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "Erstellen Sie Ihre mehrsprachige App in Sekunden",
+    "features": "Eigenschaften",
+    "featuresList": [
+      {
+        "title": "Echtzeitübersetzung",
+        "description": "Übersetzen Sie den Inhalt sofort, während Benutzer browsen.",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "Vollständig reaktionsfähig",
+        "description": "Funktioniert einwandfrei auf allen Bildschirmgrößen.",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "SEO-freundlich",
+        "description": "Eingebaute Metadaten und semantische Markierung.",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "Zugänglich",
+        "description": "WCAG-konformes Design und Interaktionen.",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "Frontend-Entwicklung",
+    "·",
+    "responsives Design",
+    "·",
+    "Leistung",
+    "·",
+    "Benutzererfahrung",
+    "·",
+    "Zugänglichkeit",
+    "·",
+    "JavaScript",
+    "·",
+    "Art der Skriptsprache",
+    "·",
+    "reagieren",
+    "·"
+  ],
+  "wordsLine2": [
+    "Webanwendungen",
+    "·",
+    "next.js",
+    "·",
+    "SEO-Optimierung",
+    "·",
+    "UI-Design",
+    "·",
+    "Tailwind CSS",
+    "·",
+    "API-Integration",
+    "·",
+    "Authentifizierungssysteme",
+    "·",
+    "cms bereit",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "Kontaktiere uns",
+    "description": "Kontaktieren Sie uns bei Fragen oder Anfragen.",
+    "section1Title": "Unsere Vision",
+    "section1Body": "Wir glauben, dass Sprache kein Hindernis für den Zugang zu Informationen sein sollte.",
+    "section2Title": "Unsere Technologie",
+    "section2Body": "Wir verwenden modernste KI, um schnelle und genaue Übersetzungen zu liefern.",
+    "section3Title": "Unser Team",
+    "section3Body": "Wir sind ein Team von Entwicklern, Linguisten und Designern mit einem gemeinsamen Ziel.",
+    "cta": "Möchten Sie mit uns arbeiten? Nehmen Sie Kontakt auf!"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "Zuhause",
+    "homeDescription": "Gehe zurück zur Startseite",
+    "about": "Über",
+    "aboutDescription": "Erfahren Sie mehr über uns",
+    "contact": "Kontakt",
+    "contactDescription": "Kontaktieren Sie uns.",
+    "dashboard": "Armaturenbrett",
+    "dashboardDescription": "Verwalten Sie Ihr Konto"
+  }
+}

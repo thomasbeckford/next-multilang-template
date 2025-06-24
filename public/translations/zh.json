@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "关于我们",
+    "subtitle": "了解 ClearSpeak 如何构建多语言网络。",
+    "section1Title": "我们的愿景",
+    "section1Body": "我们相信语言不应该成为获取信息的障碍。",
+    "section2Title": "我们的技术",
+    "section2Body": "我们使用尖端人工智能技术提供快速准确的翻译。",
+    "section3Title": "我们的团队",
+    "section3Body": "我们是一个由开发人员、语言学家和设计师组成的团队，共同拥有一个目标。",
+    "cta": "想和我们一起工作吗？请联系我们！"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "在几秒钟内构建您的多语言应用程序",
+    "features": "特点",
+    "featuresList": [
+      {
+        "title": "实时翻译",
+        "description": "随着用户浏览，即时翻译内容。",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "完全响应式",
+        "description": "在所有屏幕尺寸上都能完美运行。",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "SEO友好",
+        "description": "内置元数据和语义标记。",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "可访问",
+        "description": "WCAG兼容的设计和交互。",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "前端开发",
+    "·",
+    "响应式设计",
+    "·",
+    "性能",
+    "·",
+    "用户体验",
+    "·",
+    "可访问性",
+    "·",
+    "JavaScript",
+    "·",
+    "类型脚本",
+    "·",
+    "反应",
+    "·"
+  ],
+  "wordsLine2": [
+    "网络应用程序",
+    "·",
+    "下一个.js",
+    "·",
+    "搜索引擎优化",
+    "·",
+    "UI设计",
+    "·",
+    "尾风 CSS",
+    "·",
+    "API集成",
+    "·",
+    "认证系统",
+    "·",
+    "cms准备",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "联系我们",
+    "description": "与我们联系以获取任何查询或问题。",
+    "section1Title": "我们的愿景",
+    "section1Body": "我们认为语言不应成为获取信息的障碍。",
+    "section2Title": "我们的技术",
+    "section2Body": "我们使用尖端人工智能技术提供快速准确的翻译。",
+    "section3Title": "我们的团队",
+    "section3Body": "我们是一个由开发人员、语言学家和设计师组成的团队，共同拥有一个目标。",
+    "cta": "想和我们一起工作吗？请联系我们！"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "家",
+    "homeDescription": "返回首页",
+    "about": "关于",
+    "aboutDescription": "了解更多关于我们",
+    "contact": "联系",
+    "contactDescription": "与我们联系",
+    "dashboard": "仪表板",
+    "dashboardDescription": "管理您的帐户"
+  }
+}

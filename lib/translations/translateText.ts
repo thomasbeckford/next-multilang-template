@@ -1,7 +1,8 @@
-export async function translateText(text: string, to: string) {
+export async function translateText(text: string, to: string | string[]) {
   if (!text) return 'Error'
 
   try {
+    console.log('🌍 Traducción solicitada a OPENAI:', text)
     const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {

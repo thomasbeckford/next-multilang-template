@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "Sobre nosotros",
+    "subtitle": "Aprende cómo ClearSpeak está construyendo una web multilingüe.",
+    "section1Title": "Nuestra Visión",
+    "section1Body": "Creemos que el idioma no debería ser una barrera para acceder a la información.",
+    "section2Title": "Nuestra Tecnología",
+    "section2Body": "Utilizamos inteligencia artificial de vanguardia para ofrecer traducciones rápidas y precisas.",
+    "section3Title": "Nuestro equipo",
+    "section3Body": "Somos un equipo de desarrolladores, lingüistas y diseñadores con un objetivo compartido.",
+    "cta": "¿Quieres trabajar con nosotros? ¡Ponte en contacto!"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "Construye tu aplicación multilingüe en segundos",
+    "features": "Características",
+    "featuresList": [
+      {
+        "title": "Traducción en tiempo real",
+        "description": "Traduce contenido al instante mientras los usuarios navegan.",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "Totalmente receptivo",
+        "description": "Funciona perfectamente en todos los tamaños de pantalla.",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "Amigable con SEO",
+        "description": "Metadatos integrados y marcado semántico.",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "Accesible",
+        "description": "Diseño y interacciones compatibles con WCAG.",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "desarrollo frontend",
+    "·",
+    "diseño receptivo",
+    "·",
+    "rendimiento",
+    "·",
+    "experiencia del usuario",
+    "·",
+    "accesibilidad",
+    "·",
+    "javascript",
+    "·",
+    "typescript",
+    "·",
+    "reaccionar",
+    "·"
+  ],
+  "wordsLine2": [
+    "aplicaciones web",
+    "·",
+    "next.js",
+    "·",
+    "optimización de SEO",
+    "·",
+    "diseño de interfaz de usuario",
+    "·",
+    "tailwind css",
+    "·",
+    "Integración de API",
+    "·",
+    "sistemas de autenticación",
+    "·",
+    "cms listo",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "Contáctenos",
+    "description": "Póngase en contacto con nosotros para cualquier consulta o pregunta.",
+    "section1Title": "Nuestra Visión",
+    "section1Body": "Creemos que el idioma no debería ser una barrera para acceder a la información.",
+    "section2Title": "Nuestra Tecnología",
+    "section2Body": "Utilizamos inteligencia artificial de vanguardia para ofrecer traducciones rápidas y precisas.",
+    "section3Title": "Nuestro equipo",
+    "section3Body": "Somos un equipo de desarrolladores, lingüistas y diseñadores con un objetivo compartido.",
+    "cta": "¿Quieres trabajar con nosotros? ¡Ponte en contacto!"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "Hogar",
+    "homeDescription": "Volver a la página de inicio",
+    "about": "Acerca de",
+    "aboutDescription": "Aprende más sobre nosotros",
+    "contact": "Contacto",
+    "contactDescription": "Póngase en contacto con nosotros",
+    "dashboard": "Tablero",
+    "dashboardDescription": "Administra tu cuenta"
+  }
+}

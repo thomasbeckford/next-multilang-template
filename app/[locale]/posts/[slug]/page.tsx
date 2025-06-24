@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
-import { translateWithCache } from '@/lib/translations/translateWithCache'
+import { translateWithCacheSanity } from '@/lib/translations/translateWithCacheSanity'
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string; locale: string }>
@@ -32,7 +32,7 @@ export default async function PostPage({
   const { locale, slug } = await params
   const post = await getPostBySlug(locale, slug)
 
-  const { data: t } = await translateWithCache({
+  const { data: t, translated } = await translateWithCacheSanity({
     locale,
     updatedAt: '2025-06-23',
     content: UI_TEXTS,
@@ -79,7 +79,7 @@ export default async function PostPage({
         <PortableText value={post.body} />
       </article>
 
-      {post.translated && (
+      {translated && (
         <p className="text-sm italic text-green-400">{t.autoTranslated}</p>
       )}
     </Container>

@@ -10,40 +10,38 @@ Includes support for **Sanity CMS**, **internationalization**, **dark/light them
 
 ### 🤖 AI-Powered Enhancements
 
-- 🌐 **Automatic multilingual content (OpenAI + Redis)**
-  All content is authored in a single language (e.g., English) in Sanity, and automatically translated to other languages using the OpenAI API. Translations are cached in Redis using a `locale + updatedAt` key strategy to avoid repeated requests and reduce cost.
+- 🌐 **Automatic multilingual content (OpenAI-powered)**
+  All content is authored in a single language (e.g., English) in Sanity or local config files. Static content is translated once at build time using the OpenAI API and stored as JSON files in `public/translations`. Dynamic content (from Sanity) is translated on demand and cached in Redis using a `locale + updatedAt` strategy to reduce cost and improve performance.
 
 - ⚡ **Generic translation system**
-  A reusable `translateWithCache()` function takes any object of text fields (like `title`, `description`, `faq1`, etc.), translates them, and returns a fully localized version along with metadata. Works with any structured content.
+  A reusable `translateWithOpenAIOnly()` function is used during build to generate static translation files. For dynamic content (e.g., Sanity), `translateWithCacheSanity()` handles AI translation and Redis caching. Both accept `doNotTranslate` rules for structured fields like icons or slugs.
 
 - 🌍 **Locale detection & routing**
-  Detects the user's preferred language via the browser (`Accept-Language` header),
-  and enables locale-aware routing with optional URL prefixes (`/en`, `/es`, etc.) using [`next-intl`](https://github.com/amannn/next-intl).
+  Detects the user's preferred language via the browser (`Accept-Language` header), and supports locale-aware routing with optional URL prefixes (`/en`, `/es`, etc.) using [`next-intl`](https://github.com/amannn/next-intl).
 
 - 🧾 **Sanity CMS**
-  Content is stored once in Sanity, without the need for manually duplicated localized fields. The AI handles translation dynamically.
+  Content is stored once in Sanity in a default language. Translations are automatically generated via OpenAI and cached to Redis per-locale.
+
+- 🗂 **Modular CMS structure**
+  Clean and scalable schema definitions with organized GROQ queries.
 
 - 🌐 **Language switcher**
   Manual language selection with cookie-based persistence.
 
-- 🗂 **Modular CMS structure**
-  Clean schema definitions and GROQ queries organized for scalable content delivery.
-
 - 🎨 **Tailwind CSS + Shadcn UI**
-  Beautiful, accessible components styled with utility-first Tailwind CSS.
+  Accessible and customizable components using Tailwind utility classes and the [Shadcn](https://ui.shadcn.com) system.
 
 - 🌙 **Theme switcher**
-  Dark/Light mode toggle with cookie-based persistence.
+  Light/Dark mode toggle stored in cookies for persistent theming.
 
 - 🏷️ **SEO meta tags**
-  Dynamically generated using a `getMetadata()` function.
+  Dynamically generated via a `getMetadata()` utility for locale-specific SEO optimization.
 
 - 🎞️ **Smooth animations**
-  Scroll and interaction-based animations powered by [Motion](https://motion.dev/).
-  (Using Animate-UI too)
+  Scroll and interaction-based animations using [Motion](https://motion.dev) and Animate-UI.
 
 - 📝 **Authentication**
-  Protected routes using [Clerk](https://clerk.com/).
+  Secure routes powered by [Clerk](https://clerk.com/) for modern auth.
 
 ---
 
