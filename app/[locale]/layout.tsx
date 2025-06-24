@@ -11,8 +11,6 @@ import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '@/components/Footer'
 import { TanstackQueryProvider } from '@/providers/TanstackQuery'
 import { getTranslatedLinks } from '@/hooks/useLinks'
-
-
 import '@/app/globals.css'
 
 export default async function LocaleLayout({
@@ -32,8 +30,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
-
-
         <TanstackQueryProvider>
           <ClerkProvider>
             <NextIntlClientProvider locale={locale}>

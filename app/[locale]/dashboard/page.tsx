@@ -3,7 +3,6 @@ import { Container } from '@/components/ui/container'
 import Link from 'next/link'
 import { getPostData } from '@/sanity/queries/getPostData'
 import { translateWithCache } from '@/lib/translations/translateWithCache'
-import { Locale } from '@/lib/constants'
 
 const UI_TEXTS = {
   welcome: 'Welcome to your dashboard',
@@ -14,7 +13,7 @@ const UI_TEXTS = {
 export default async function DashboardPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }) {
   const { userId } = await auth()
   const { locale } = await params

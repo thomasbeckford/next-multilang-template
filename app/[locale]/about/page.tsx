@@ -1,8 +1,8 @@
 import { Container } from '@/components/ui/container'
 import getMetadata from '@/lib/seo'
-import { type Metadata } from 'next'
-import { Locale } from '@/lib/constants'
 import { translateWithCache } from '@/lib/translations/translateWithCache'
+import { ABOUT_TEXTS } from '@/i18n/messages/AboutPage'
+import { type Metadata } from 'next'
 
 export const metadata: Metadata = getMetadata({
   title: 'About | ClearSpeak',
@@ -12,24 +12,8 @@ export const metadata: Metadata = getMetadata({
   image: 'https://clearkspeak1.app/og-image.jpg',
 })
 
-// contenido original
-const ABOUT_TEXTS = {
-  title: 'About Us',
-  subtitle: 'Learn how ClearSpeak is building a multilingual web.',
-  section1Title: 'Our Vision',
-  section1Body:
-    'We believe that language should not be a barrier to access information.',
-  section2Title: 'Our Technology',
-  section2Body:
-    'We use cutting-edge AI to deliver fast and accurate translations.',
-  section3Title: 'Our Team',
-  section3Body:
-    'We are a team of developers, linguists, and designers with a shared goal.',
-  cta: 'Want to work with us? Get in touch!',
-}
-
 // traducción + cache
-async function getTranslatedAboutContent(locale: Locale) {
+async function getTranslatedAboutContent(locale: string) {
   const flatContent = ABOUT_TEXTS
 
   const { data } = await translateWithCache({
@@ -45,7 +29,7 @@ async function getTranslatedAboutContent(locale: Locale) {
 export default async function AboutPage({
   params,
 }: {
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
   const t = await getTranslatedAboutContent(locale)

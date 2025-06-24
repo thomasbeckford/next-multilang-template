@@ -7,6 +7,7 @@ import { Container } from '@/components/ui/container'
 import ScrollMarquee from '@/components/ScrollMarquee'
 import AutoMarquee from '@/components/AutoMarquee'
 import Features from '@/components/Features'
+import { HOMEPAGE_TEXTS } from '@/i18n/messages/HomePage'
 
 export const metadata: Metadata = getMetadata({
   title: 'Home | ClearSpeak',
@@ -15,33 +16,6 @@ export const metadata: Metadata = getMetadata({
   url: 'https://clearkspeak1.vercel.app',
   image: 'https://clearkspeak1.vercel.app/og-image.jpg',
 })
-
-const HOMEPAGE_TEXTS = {
-  title: 'Build your multilingual app in seconds',
-  features: 'Features',
-  featuresList: [
-    {
-      title: 'Real-time Translation',
-      description: 'Translate content instantly as users browse.',
-      icon: 'ArrowRight',
-    },
-    {
-      title: 'Fully Responsive',
-      description: 'Works perfectly on all screen sizes.',
-      icon: 'Paintbrush',
-    },
-    {
-      title: 'SEO Friendly',
-      description: 'Built-in metadata and semantic markup.',
-      icon: 'ExternalLink',
-    },
-    {
-      title: 'Accessible',
-      description: 'WCAG compliant design and interactions.',
-      icon: 'RefreshCcw',
-    },
-  ],
-}
 
 async function getTranslatedContent(locale: string, updatedAt: string) {
   const flatContent = {
