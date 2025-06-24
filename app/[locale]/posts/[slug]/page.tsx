@@ -5,7 +5,6 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
 import { translateWithCache } from '@/lib/translations/translateWithCache'
-import { Locale } from '@/lib/constants'
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string; locale: string }>
@@ -28,7 +27,7 @@ const UI_TEXTS = {
 export default async function PostPage({
   params,
 }: {
-  params: Promise<{ locale: Locale; slug: string }>
+  params: Promise<{ locale: string; slug: string }>
 }) {
   const { locale, slug } = await params
   const post = await getPostBySlug(locale, slug)
