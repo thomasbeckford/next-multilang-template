@@ -2,8 +2,6 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextResponse } from "next/server";
-import { geolocation } from "@vercel/functions";
-import { ipAddress } from "@vercel/functions";
 
 // Explicacion del middleware
 // intlMiddleware: Para manejar la internacionalizacion
@@ -26,13 +24,6 @@ const isProtectedRoute = createRouteMatcher(
 
 export default clerkMiddleware(async (auth, req) => {
   const { pathname } = req.nextUrl;
-
-  const { city } = geolocation(req);
-  const ip = ipAddress(req);
-
-  console.log("IP: ", ip);
-
-  console.log("City: ", city);
 
   // 👇 Esta línea evita aplicar next-intl a /studio y sus subrutas
   if (pathname.startsWith("/studio")) {
