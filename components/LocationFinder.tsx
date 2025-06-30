@@ -19,7 +19,6 @@ export function LocationFinder() {
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedLocationId, setSelectedLocationId] = useState("");
 
-  // Encontrar ubicación más cercana cuando cambie la ubicación del usuario
   useEffect(() => {
     if (userLocation) {
       const nearest = findNearestLocation(userLocation, locations);
@@ -52,12 +51,23 @@ export function LocationFinder() {
 
   return (
     <div className="max-w-md mx-auto p-6 space-y-6">
-      {/* Resultado: Ubicación encontrada */}
+      {/* Ubicación encontrada */}
       {nearestLocation && (
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <h3 className="font-semibold text-green-800 mb-2">
-            Tu locación más cercana:
-          </h3>
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="font-semibold text-green-800">
+              Tu locación más cercana:
+            </h3>
+            {userLocation?.source === "ip" && (
+              <button
+                onClick={requestPermission}
+                className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200 transition-colors"
+              >
+                Mejorar precisión
+              </button>
+            )}
+          </div>
+
           <div className="space-y-1">
             <p className="font-medium">{nearestLocation.name}</p>
             <p className="text-sm text-gray-600">{nearestLocation.address}</p>
@@ -65,25 +75,24 @@ export function LocationFinder() {
               <p className="text-sm text-gray-500">
                 Distancia: {nearestLocation.distance.toFixed(2)} km
                 {userLocation?.source === "ip" && " (aproximada)"}
+                {userLocation?.source === "gps" && " (GPS)"}
               </p>
             )}
           </div>
         </div>
       )}
 
-      {/* Error: No se pudo detectar ubicación */}
-      {error && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-red-700 mb-4">
-            No pudimos detectar tu ubicación automáticamente
-          </p>
+      {/* Error o sin ubicación */}
+      {error && !nearestLocation && (
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <p className="text-amber-700 mb-4">{error}</p>
 
           <div className="space-y-2">
             <button
               onClick={requestPermission}
               className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
             >
-              Intentar de nuevo
+              Activar GPS para mayor precisión
             </button>
 
             <button
@@ -101,7 +110,6 @@ export function LocationFinder() {
         <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg space-y-4">
           <h4 className="font-medium">Selecciona tu ubicación:</h4>
 
-          {/* Selector de ciudad */}
           <div>
             <label htmlFor="city" className="block text-sm font-medium mb-1">
               Ciudad:
@@ -124,7 +132,6 @@ export function LocationFinder() {
             </select>
           </div>
 
-          {/* Selector de locación */}
           {selectedCity && (
             <div>
               <label
@@ -149,7 +156,6 @@ export function LocationFinder() {
             </div>
           )}
 
-          {/* Botón confirmar */}
           {selectedLocationId && (
             <button
               onClick={handleManualSelection}
@@ -158,6 +164,14 @@ export function LocationFinder() {
               Confirmar selección
             </button>
           )}
+        </div>
+      )}
+
+      {/* Información adicional */}
+      {userLocation && (
+        <div className="text-xs text-gray-500 text-center">
+          Ubicación detectada vía{" "}
+          {userLocation.source === "gps" ? "GPS" : "IP geolocation"}
         </div>
       )}
     </div>

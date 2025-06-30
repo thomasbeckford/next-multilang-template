@@ -41,4 +41,27 @@ export const locations: LocationData = {
       address: "321 1st Ave, Seattle, WA",
     },
   ],
+  London: [
+    {
+      id: "lambeth",
+      name: "Lambeth",
+      city: "London",
+      coordinates: { lat: 51.4623, lng: -0.1118 },
+      address: "123 Lambeth Road, London, UK",
+    },
+    {
+      id: "oxford",
+      name: "Oxford",
+      city: "London",
+      coordinates: { lat: 51.75, lng: -0.1247 },
+      address: "123 Oxford Road, London, UK",
+    },
+    {
+      id: "manchester",
+      name: "Manchester",
+      city: "London",
+      coordinates: { lat: 51.75, lng: -0.1247 },
+      address: "123 Oxford Road, London, UK",
+    },
+  ],
 };

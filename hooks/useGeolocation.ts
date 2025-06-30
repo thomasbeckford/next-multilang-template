@@ -13,10 +13,10 @@ export function useGeolocation(): GeolocationState & {
     loading: true,
   });
 
-  const getLocationByIP = async (): Promise<UserLocation | null> => {
+  const getLocationByVercel = async (): Promise<UserLocation | null> => {
     try {
-      const response = await fetch("/api/location-by-ip");
-      if (!response.ok) throw new Error("Failed to get IP location");
+      const response = await fetch("/api/location");
+      if (!response.ok) throw new Error("Failed to get Vercel location");
 
       const data = await response.json();
       return {
@@ -25,7 +25,7 @@ export function useGeolocation(): GeolocationState & {
         source: "ip",
       };
     } catch (error) {
-      console.error("Error getting location by IP:", error);
+      console.error("Error getting location by Vercel:", error);
       return null;
     }
   };
@@ -38,9 +38,9 @@ export function useGeolocation(): GeolocationState & {
       }
 
       const options: PositionOptions = {
-        enableHighAccuracy: false,
+        enableHighAccuracy: true,
         timeout: 5000,
-        maximumAge: 600000, // 10 minutos
+        maximumAge: 300000, // 5 minutos
       };
 
       navigator.geolocation.getCurrentPosition(
@@ -61,7 +61,18 @@ export function useGeolocation(): GeolocationState & {
     setState((prev) => ({ ...prev, loading: true, error: null }));
 
     try {
-      // Intentar GPS primero
+      // 1. Vercel primero (instantáneo y confiable)
+      const vercelLocation = await getLocationByVercel();
+      if (vercelLocation) {
+        setState({
+          location: vercelLocation,
+          error: null,
+          loading: false,
+        });
+        return;
+      }
+
+      // 2. Si Vercel falla, intentar GPS para mayor precisión
       const gpsLocation = await getCurrentPosition();
       setState({
         location: gpsLocation,
@@ -69,23 +80,31 @@ export function useGeolocation(): GeolocationState & {
         loading: false,
       });
     } catch (gpsError) {
-      console.log("GPS failed, trying IP fallback");
+      // 3. Si todo falla, mostrar error pero ofrecer selección manual
+      setState({
+        location: null,
+        error: "No se pudo determinar la ubicación automáticamente",
+        loading: false,
+      });
+    }
+  };
 
-      // Fallback a IP
-      const ipLocation = await getLocationByIP();
-      if (ipLocation) {
-        setState({
-          location: ipLocation,
-          error: null,
-          loading: false,
-        });
-      } else {
-        setState({
-          location: null,
-          error: "No se pudo determinar la ubicación",
-          loading: false,
-        });
-      }
+  const requestGPSPermission = async () => {
+    setState((prev) => ({ ...prev, loading: true, error: null }));
+
+    try {
+      const gpsLocation = await getCurrentPosition();
+      setState({
+        location: gpsLocation,
+        error: null,
+        loading: false,
+      });
+    } catch (error) {
+      setState((prev) => ({
+        ...prev,
+        error: "No se pudo acceder al GPS. Usando ubicación aproximada.",
+        loading: false,
+      }));
     }
   };
 
@@ -93,12 +112,8 @@ export function useGeolocation(): GeolocationState & {
     attemptGeolocation();
   }, []);
 
-  const requestPermission = () => {
-    attemptGeolocation();
-  };
-
   return {
     ...state,
-    requestPermission,
+    requestPermission: requestGPSPermission,
   };
 }
