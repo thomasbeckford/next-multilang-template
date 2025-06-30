@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "Chi siamo",
+    "subtitle": "Scopri come ClearSpeak sta costruendo una web multilingue.",
+    "section1Title": "La nostra visione",
+    "section1Body": "Crediamo che la lingua non dovrebbe essere un ostacolo per accedere alle informazioni.",
+    "section2Title": "La nostra tecnologia",
+    "section2Body": "Usiamo l'intelligenza artificiale all'avanguardia per fornire traduzioni veloci e accurate.",
+    "section3Title": "Il nostro Team",
+    "section3Body": "Siamo un team di sviluppatori, linguisti e designer con un obiettivo comune.",
+    "cta": "Vuoi lavorare con noi? Mettiti in contatto!"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "Costruisci la tua app multilingue in pochi secondi",
+    "features": "Caratteristiche",
+    "featuresList": [
+      {
+        "title": "Traduzione in tempo reale",
+        "description": "Tradurre contenuti istantaneamente mentre gli utenti navigano.",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "Totalmente reattivo",
+        "description": "Funziona perfettamente su tutte le dimensioni dello schermo.",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "SEO Friendly",
+        "description": "Metadati incorporati e markup semantico.",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "Accessibile",
+        "description": "Design e interazioni conformi a WCAG.",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "sviluppo frontend",
+    "·",
+    "design reattivo",
+    "·",
+    "prestazione",
+    "·",
+    "esperienza utente",
+    "·",
+    "accessibilità",
+    "·",
+    "javascript",
+    "·",
+    "typescript",
+    "·",
+    "reagire",
+    "·"
+  ],
+  "wordsLine2": [
+    "applicazioni web",
+    "·",
+    "next.js",
+    "·",
+    "ottimizzazione SEO",
+    "·",
+    "progettazione dell'interfaccia utente",
+    "·",
+    "tailwind css",
+    "·",
+    "Integrazione API",
+    "·",
+    "sistemi di autenticazione",
+    "·",
+    "cms pronto",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "Contattaci",
+    "description": "Mettersi in contatto con noi per qualsiasi domanda o richiesta.",
+    "section1Title": "La nostra visione",
+    "section1Body": "Crediamo che la lingua non debba essere un ostacolo per accedere alle informazioni.",
+    "section2Title": "La nostra tecnologia",
+    "section2Body": "Usiamo l'intelligenza artificiale all'avanguardia per fornire traduzioni veloci e accurate.",
+    "section3Title": "La nostra squadra",
+    "section3Body": "Siamo un team di sviluppatori, linguisti e designer con un obiettivo comune.",
+    "cta": "Vuoi lavorare con noi? Contattaci!"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "Casa",
+    "homeDescription": "Torna alla homepage",
+    "about": "Su di esso",
+    "aboutDescription": "Scopri di più su di noi",
+    "contact": "Contatto",
+    "contactDescription": "Mettersi in contatto con noi",
+    "dashboard": "Cruscotto",
+    "dashboardDescription": "Gestisci il tuo account"
+  }
+}

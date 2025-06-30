@@ -1,7 +1,9 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
-import createMiddleware from 'next-intl/middleware'
-import { routing } from './i18n/routing'
-import { NextResponse } from 'next/server'
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
+import { NextResponse } from "next/server";
+import { geolocation } from "@vercel/functions";
+import { ipAddress } from "@vercel/functions";
 
 // Explicacion del middleware
 // intlMiddleware: Para manejar la internacionalizacion
@@ -11,7 +13,7 @@ import { NextResponse } from 'next/server'
 const intlMiddleware = createMiddleware({
   ...routing,
   localeDetection: true,
-})
+});
 
 const isProtectedRoute = createRouteMatcher(
   routing.locales.flatMap((locale) => [
@@ -20,29 +22,36 @@ const isProtectedRoute = createRouteMatcher(
     `/${locale}/settings`,
     `/${locale}/settings/(.*)`,
   ])
-)
+);
 
 export default clerkMiddleware(async (auth, req) => {
-  const { pathname } = req.nextUrl
+  const { pathname } = req.nextUrl;
+
+  const { city } = geolocation(req);
+  const ip = ipAddress(req);
+
+  console.log("IP: ", ip);
+
+  console.log("City: ", city);
 
   // 👇 Esta línea evita aplicar next-intl a /studio y sus subrutas
-  if (pathname.startsWith('/studio')) {
-    console.log('Studio')
-    return NextResponse.next()
+  if (pathname.startsWith("/studio")) {
+    console.log("Studio");
+    return NextResponse.next();
   }
 
   if (isProtectedRoute(req)) {
-    await auth.protect()
+    await auth.protect();
   }
 
-  return intlMiddleware(req)
-})
+  return intlMiddleware(req);
+});
 
 // Que hace el matcher?
 // En todas estas rutas, el middleware se ejecuta
 export const config = {
   matcher: [
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    '/(api|trpc)(.*)',
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    "/(api|trpc)(.*)",
   ],
-}
+};

@@ -2,17 +2,17 @@
   "ABOUT_TEXTS": {
     "title": "Über uns",
     "subtitle": "Erfahren Sie, wie ClearSpeak ein mehrsprachiges Web aufbaut.",
-    "section1Title": "Unsere Hauptvision",
+    "section1Title": "Unsere Vision",
     "section1Body": "Wir glauben, dass Sprache kein Hindernis für den Zugang zu Informationen sein sollte.",
-    "section2Title": "Unsere Technologien",
-    "section2Body": "Wir verwenden modernste KI, um schnelle und genaue Übersetzungen zu liefern.",
+    "section2Title": "Unsere Technologie",
+    "section2Body": "Wir verwenden hochmoderne KI, um schnelle und genaue Übersetzungen zu liefern.",
     "section3Title": "Unser Team",
     "section3Body": "Wir sind ein Team von Entwicklern, Linguisten und Designern mit einem gemeinsamen Ziel.",
     "cta": "Möchten Sie mit uns arbeiten? Nehmen Sie Kontakt auf!"
   },
   "HOMEPAGE_TEXTS": {
     "title": "Erstellen Sie Ihre mehrsprachige App in Sekunden",
-    "features": "Funktionen",
+    "features": "Eigenschaften",
     "featuresList": [
       {
         "title": "Echtzeitübersetzung",
@@ -49,7 +49,7 @@
     "·",
     "JavaScript",
     "·",
-    "Typeskript",
+    "Art der Skriptsprache",
     "·",
     "reagieren",
     "·"

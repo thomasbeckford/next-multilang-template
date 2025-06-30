@@ -1,0 +1,96 @@
+{
+  "ABOUT_TEXTS": {
+    "title": "About Us",
+    "subtitle": "Learn how ClearSpeak is building a multilingual web.",
+    "section1Title": "Our Main Vision",
+    "section1Body": "We believe that language should not be a barrier to access information.",
+    "section2Title": "Our Technologies",
+    "section2Body": "We use cutting-edge AI to deliver fast and accurate translations.",
+    "section3Title": "Our Team",
+    "section3Body": "We are a team of developers, linguists, and designers with a shared goal.",
+    "cta": "Want to work with us? Get in touch!"
+  },
+  "HOMEPAGE_TEXTS": {
+    "title": "Build your multilingual app in seconds",
+    "features": "Features",
+    "featuresList": [
+      {
+        "title": "Real-time Translation",
+        "description": "Translate content instantly as users browse.",
+        "icon": "ArrowRight"
+      },
+      {
+        "title": "Fully Responsive",
+        "description": "Works perfectly on all screen sizes.",
+        "icon": "Paintbrush"
+      },
+      {
+        "title": "SEO Friendly",
+        "description": "Built-in metadata and semantic markup.",
+        "icon": "ExternalLink"
+      },
+      {
+        "title": "Accessible",
+        "description": "Design and interactions compliant with WCAG.",
+        "icon": "RefreshCcw"
+      }
+    ]
+  },
+  "wordsLine1": [
+    "frontend development",
+    "·",
+    "responsive design",
+    "·",
+    "performance",
+    "·",
+    "user experience",
+    "·",
+    "accessibility",
+    "·",
+    "JavaScript",
+    "·",
+    "typescript",
+    "·",
+    "react",
+    "·"
+  ],
+  "wordsLine2": [
+    "web apps",
+    "·",
+    "next.js",
+    "·",
+    "SEO optimization",
+    "·",
+    "ui design",
+    "·",
+    "tailwind css",
+    "·",
+    "API integration",
+    "·",
+    "authentication systems",
+    "·",
+    "cms ready",
+    "·"
+  ],
+  "CONTACT_TEXTS": {
+    "title": "Contact Us",
+    "description": "Contact us for any inquiries or questions.",
+    "section1Title": "Our Vision",
+    "section1Body": "We believe that language should not be a barrier to access information.",
+    "section2Title": "Our Technology",
+    "section2Body": "We use cutting-edge AI to deliver fast and accurate translations.",
+    "section3Title": "Our Team",
+    "section3Body": "We are a team of developers, linguists, and designers with a shared goal.",
+    "cta": "Want to work with us? Get in touch!"
+  },
+  "NAVBAR_TEXTS": {
+    "home": "Home",
+    "homeDescription": "Go back to homepage",
+    "about": "About",
+    "aboutDescription": "Learn more about us",
+    "contact": "Contact",
+    "contactDescription": "Get in touch with us",
+    "dashboard": "Dashboard",
+    "dashboardDescription": "Manage your account"
+  }
+}

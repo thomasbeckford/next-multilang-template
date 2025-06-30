@@ -1,10 +1,10 @@
 {
   "ABOUT_TEXTS": {
-    "title": "Sobre Nós",
-    "subtitle": "Saiba como ClearSpeak está construindo uma web multilíngue.",
-    "section1Title": "Nossa Visão Principal",
+    "title": "Sobre nós",
+    "subtitle": "Saiba como o ClearSpeak está construindo uma web multilíngue.",
+    "section1Title": "Nossa Visão",
     "section1Body": "Acreditamos que a linguagem não deve ser uma barreira para acessar informações.",
-    "section2Title": "Nossas Tecnologias",
+    "section2Title": "Nossa Tecnologia",
     "section2Body": "Usamos inteligência artificial de ponta para fornecer traduções rápidas e precisas.",
     "section3Title": "Nossa Equipe",
     "section3Body": "Somos uma equipe de desenvolvedores, linguistas e designers com um objetivo em comum.",
@@ -20,13 +20,13 @@
         "icon": "ArrowRight"
       },
       {
-        "title": "Totalmente responsivo",
+        "title": "Totalmente Responsivo",
         "description": "Funciona perfeitamente em todos os tamanhos de tela.",
         "icon": "Paintbrush"
       },
       {
         "title": "Amigável para SEO",
-        "description": "Metadados integrados e marcação semântica.",
+        "description": "Metadados incorporados e marcação semântica.",
         "icon": "ExternalLink"
       },
       {
@@ -37,7 +37,7 @@
     ]
   },
   "wordsLine1": [
-    "desenvolvimento frontend",
+    "desenvolvimento de frontend",
     "·",
     "design responsivo",
     "·",
@@ -57,7 +57,7 @@
   "wordsLine2": [
     "aplicativos da web",
     "·",
-    "próximo.js",
+    "next.js",
     "·",
     "otimização de SEO",
     "·",
@@ -65,7 +65,7 @@
     "·",
     "css tailwind",
     "·",
-    "Integração de API",
+    "integração de API",
     "·",
     "sistemas de autenticação",
     "·",
@@ -73,12 +73,12 @@
     "·"
   ],
   "CONTACT_TEXTS": {
-    "title": "Entre em contato.",
+    "title": "Entre em contato",
     "description": "Entre em contato conosco para quaisquer dúvidas ou perguntas.",
     "section1Title": "Nossa Visão",
     "section1Body": "Acreditamos que a linguagem não deve ser uma barreira para acessar informações.",
     "section2Title": "Nossa Tecnologia",
-    "section2Body": "Usamos inteligência artificial de ponta para fornecer traduções rápidas e precisas.",
+    "section2Body": "Nós usamos inteligência artificial de ponta para fornecer traduções rápidas e precisas.",
     "section3Title": "Nossa Equipe",
     "section3Body": "Somos uma equipe de desenvolvedores, linguistas e designers com um objetivo em comum.",
     "cta": "Quer trabalhar conosco? Entre em contato!"

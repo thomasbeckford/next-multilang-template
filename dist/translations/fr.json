@@ -2,12 +2,12 @@
   "ABOUT_TEXTS": {
     "title": "À propos de nous",
     "subtitle": "Découvrez comment ClearSpeak construit un web multilingue.",
-    "section1Title": "Notre Vision Principale",
+    "section1Title": "Notre vision",
     "section1Body": "Nous croyons que la langue ne devrait pas être un obstacle à l'accès à l'information.",
-    "section2Title": "Nos Technologies",
-    "section2Body": "Nous utilisons l'intelligence artificielle de pointe pour fournir des traductions rapides et précises.",
+    "section2Title": "Notre technologie",
+    "section2Body": "Nous utilisons une intelligence artificielle de pointe pour fournir des traductions rapides et précises.",
     "section3Title": "Notre équipe",
-    "section3Body": "Nous sommes une équipe de développeurs, de linguistes et de designers avec un objectif commun.",
+    "section3Body": "Nous sommes une équipe de développeurs, linguistes et designers avec un objectif commun.",
     "cta": "Vous voulez travailler avec nous ? Contactez-nous !"
   },
   "HOMEPAGE_TEXTS": {
@@ -31,7 +31,7 @@
       },
       {
         "title": "Accessible",
-        "description": "Conception et interactions conformes aux WCAG.",
+        "description": "Conception et interactions conformes à la WCAG.",
         "icon": "RefreshCcw"
       }
     ]
@@ -49,7 +49,7 @@
     "·",
     "javascript",
     "·",
-    "fr",
+    "typescript",
     "·",
     "réagir",
     "·"
@@ -59,13 +59,13 @@
     "·",
     "next.js",
     "·",
-    "optimisation du référencement (SEO)",
+    "optimisation du référencement naturel",
     "·",
     "conception d'interface utilisateur",
     "·",
     "css tailwind",
     "·",
-    "intégration d'API",
+    "Intégration d'API",
     "·",
     "systèmes d'authentification",
     "·",
