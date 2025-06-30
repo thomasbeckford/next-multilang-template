@@ -6,10 +6,29 @@ export interface Coordinates {
 
 export interface Location {
   id: string;
+  mboId: number;
   name: string;
-  city: string;
-  coordinates: Coordinates;
-  address: string;
+  siteId: number;
+  telephone: string;
+  latitude: string; // Tu API devuelve string
+  longitude: string; // Tu API devuelve string
+  experiences: string[];
+  promotions: any[];
+  urlSlug: string;
+  waiverUrl: string;
+  calendarUrl: string;
+  enableAppointmentReminders: boolean;
+  enableS2SBooking: boolean;
+  s2sReservationFee: null;
+  squareId: string;
+  squareCredentialsId: string;
+  foodOrderAvailability: string;
+  membershipConfig: {
+    freeMembershipMinutes: number;
+  };
+  timezone: string;
+
+  // Campos agregados para cálculos
   distance?: number;
 }
 

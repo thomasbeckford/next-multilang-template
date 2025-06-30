@@ -17,6 +17,18 @@ const locales = [
     flag: "🇯🇵",
     imageUrl: "https://flagcdn.com/jp.svg",
   },
+  {
+    label: "Français",
+    value: "fr",
+    flag: "🇫🇷",
+    imageUrl: "https://flagcdn.com/fr.svg",
+  },
+  {
+    label: "Deutsch",
+    value: "de",
+    flag: "🇩🇪",
+    imageUrl: "https://flagcdn.com/de.svg",
+  },
 ];
 
 export default locales;

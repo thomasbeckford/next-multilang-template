@@ -4,8 +4,8 @@
 import { useEffect, useState } from "react";
 import { useGeolocation } from "@/hooks/useGeolocation";
 import { findNearestLocation } from "@/lib/distance";
-import { locations } from "@/data/locations";
 import { Location } from "@/types/location";
+import { useGolfLocations } from "@/hooks/useGolfLocations";
 
 export function LocationFinder() {
   const {
@@ -18,19 +18,22 @@ export function LocationFinder() {
   const [showManualSelection, setShowManualSelection] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedLocationId, setSelectedLocationId] = useState("");
+  const { golfLocations, isPendingGolfLocations } = useGolfLocations();
 
   useEffect(() => {
-    if (userLocation) {
-      const nearest = findNearestLocation(userLocation, locations);
+    if (userLocation && golfLocations) {
+      const nearest = findNearestLocation(userLocation, golfLocations);
       setNearestLocation(nearest);
     }
-  }, [userLocation]);
+  }, [userLocation, golfLocations]);
 
   const handleManualSelection = () => {
-    if (!selectedLocationId) return;
+    if (!selectedLocationId || !golfLocations) return;
 
-    const allLocations = Object.values(locations).flat();
-    const selected = allLocations.find((loc) => loc.id === selectedLocationId);
+    const allLocations = Object.values(golfLocations).flat();
+    const selected = allLocations.find(
+      (loc: Location) => loc.id === selectedLocationId
+    ) as Location;
 
     if (selected) {
       setNearestLocation(selected);
@@ -38,7 +41,8 @@ export function LocationFinder() {
     }
   };
 
-  const cities = Object.keys(locations);
+  // Obtener ciudades únicas de las locaciones
+  const cities = golfLocations ? Object.keys(golfLocations) : [];
 
   if (loading) {
     return (
@@ -53,24 +57,20 @@ export function LocationFinder() {
     <div className="max-w-md mx-auto p-6 space-y-6">
       {/* Ubicación encontrada */}
       {nearestLocation && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+        <div className="p-4 bg-slate-900 border border-slate-800 rounded-lg">
           <div className="flex items-center justify-between mb-2">
             <h3 className="font-semibold text-green-800">
               Tu locación más cercana:
             </h3>
-            {userLocation?.source === "ip" && (
-              <button
-                onClick={requestPermission}
-                className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200 transition-colors"
-              >
-                Mejorar precisión
-              </button>
-            )}
           </div>
 
           <div className="space-y-1">
             <p className="font-medium">{nearestLocation.name}</p>
-            <p className="text-sm text-gray-600">{nearestLocation.address}</p>
+            <p className="text-sm text-gray-600">{nearestLocation.telephone}</p>
+            <p className="text-sm text-gray-500">
+              Lat: {parseFloat(nearestLocation.latitude).toFixed(4)}, Lng:{" "}
+              {parseFloat(nearestLocation.longitude).toFixed(4)}
+            </p>
             {nearestLocation.distance && (
               <p className="text-sm text-gray-500">
                 Distancia: {nearestLocation.distance.toFixed(2)} km
@@ -78,13 +78,23 @@ export function LocationFinder() {
                 {userLocation?.source === "gps" && " (GPS)"}
               </p>
             )}
+
+            {/* Botón para ir a la página de la locación */}
+            <div className="pt-2">
+              <a
+                href={`/locations/${nearestLocation.urlSlug}`}
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition-colors"
+              >
+                Ver detalles
+              </a>
+            </div>
           </div>
         </div>
       )}
 
       {/* Error o sin ubicación */}
       {error && !nearestLocation && (
-        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+        <div className="p-4 bg-slate-900 border border-slate-800 rounded-lg">
           <p className="text-amber-700 mb-4">{error}</p>
 
           <div className="space-y-2">
@@ -106,7 +116,7 @@ export function LocationFinder() {
       )}
 
       {/* Selección manual */}
-      {showManualSelection && (
+      {showManualSelection && golfLocations && (
         <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg space-y-4">
           <h4 className="font-medium">Selecciona tu ubicación:</h4>
 
@@ -147,7 +157,7 @@ export function LocationFinder() {
                 className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">Selecciona una locación</option>
-                {locations[selectedCity]?.map((location) => (
+                {golfLocations[selectedCity]?.map((location: Location) => (
                   <option key={location.id} value={location.id}>
                     {location.name}
                   </option>

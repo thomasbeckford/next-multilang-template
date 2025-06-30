@@ -31,20 +31,26 @@ function toRad(value: number): number {
 
 export function findNearestLocation(
   userLocation: UserLocation,
-  allLocations: LocationData
+  allLocations: Location[]
 ): Location | null {
   const flatLocations = Object.values(allLocations).flat();
 
   if (flatLocations.length === 0) return null;
 
   let nearestLocation = flatLocations[0];
-  let minDistance = calculateDistance(
-    userLocation,
-    nearestLocation.coordinates
-  );
+  let minDistance = calculateDistance(userLocation, {
+    lat: parseFloat(nearestLocation.latitude),
+    lng: parseFloat(nearestLocation.longitude),
+  });
 
   for (const location of flatLocations) {
-    const distance = calculateDistance(userLocation, location.coordinates);
+    const locationCoords = {
+      lat: parseFloat(location.latitude),
+      lng: parseFloat(location.longitude),
+    };
+
+    const distance = calculateDistance(userLocation, locationCoords);
+
     if (distance < minDistance) {
       minDistance = distance;
       nearestLocation = location;

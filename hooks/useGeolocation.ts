@@ -15,7 +15,7 @@ export function useGeolocation(): GeolocationState & {
 
   const getLocationByVercel = async (): Promise<UserLocation | null> => {
     try {
-      const response = await fetch("/api/location");
+      const response = await fetch("/api/user-location");
       if (!response.ok) throw new Error("Failed to get Vercel location");
 
       const data = await response.json();
