@@ -31,7 +31,7 @@ function toRad(value: number): number {
 
 export function findNearestLocation(
   userLocation: UserLocation,
-  allLocations: Location[]
+  allLocations: LocationData
 ): Location | null {
   const flatLocations = Object.values(allLocations).flat();
 

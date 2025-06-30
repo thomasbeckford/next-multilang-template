@@ -44,7 +44,7 @@ export function LocationFinder() {
   // Obtener ciudades únicas de las locaciones
   const cities = golfLocations ? Object.keys(golfLocations) : [];
 
-  if (loading) {
+  if (loading || isPendingGolfLocations) {
     return (
       <div className="p-6 text-center">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-4"></div>

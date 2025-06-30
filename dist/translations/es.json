@@ -63,13 +63,13 @@
     "·",
     "diseño de interfaz de usuario",
     "·",
-    "css de tailwind",
+    "css de viento de cola",
     "·",
-    "Integración de API",
+    "integración de API",
     "·",
     "sistemas de autenticación",
     "·",
-    "listo para cms",
+    "cms listo",
     "·"
   ],
   "CONTACT_TEXTS": {
@@ -89,7 +89,7 @@
     "about": "Acerca de",
     "aboutDescription": "Aprende más sobre nosotros",
     "contact": "Contacto",
-    "contactDescription": "Ponte en contacto con nosotros",
+    "contactDescription": "Póngase en contacto con nosotros",
     "dashboard": "Tablero",
     "dashboardDescription": "Administra tu cuenta"
   }

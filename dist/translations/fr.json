@@ -2,21 +2,21 @@
   "ABOUT_TEXTS": {
     "title": "À propos de nous",
     "subtitle": "Découvrez comment ClearSpeak construit un web multilingue.",
-    "section1Title": "Notre vision",
+    "section1Title": "Notre vision principale",
     "section1Body": "Nous croyons que la langue ne devrait pas être un obstacle à l'accès à l'information.",
-    "section2Title": "Notre technologie",
-    "section2Body": "Nous utilisons une intelligence artificielle de pointe pour fournir des traductions rapides et précises.",
+    "section2Title": "Nos technologies",
+    "section2Body": "Nous utilisons une IA de pointe pour fournir des traductions rapides et précises.",
     "section3Title": "Notre équipe",
-    "section3Body": "Nous sommes une équipe de développeurs, linguistes et designers avec un objectif commun.",
+    "section3Body": "Nous sommes une équipe de développeurs, de linguistes et de designers ayant un objectif commun.",
     "cta": "Vous voulez travailler avec nous ? Contactez-nous !"
   },
   "HOMEPAGE_TEXTS": {
     "title": "Construisez votre application multilingue en quelques secondes",
-    "features": "Fonctionnalités",
+    "features": "Caractéristiques",
     "featuresList": [
       {
         "title": "Traduction en temps réel",
-        "description": "Traduisez le contenu instantanément pendant que les utilisateurs naviguent.",
+        "description": "Traduire le contenu instantanément pendant que les utilisateurs naviguent.",
         "icon": "ArrowRight"
       },
       {
@@ -25,13 +25,13 @@
         "icon": "Paintbrush"
       },
       {
-        "title": "Convivial pour le référencement (SEO)",
+        "title": "Convivialité SEO",
         "description": "Métadonnées intégrées et balisage sémantique.",
         "icon": "ExternalLink"
       },
       {
         "title": "Accessible",
-        "description": "Conception et interactions conformes à la WCAG.",
+        "description": "Conception et interactions conformes aux WCAG.",
         "icon": "RefreshCcw"
       }
     ]
@@ -39,7 +39,7 @@
   "wordsLine1": [
     "développement frontend",
     "·",
-    "conception adaptative",
+    "conception réactive",
     "·",
     "performance",
     "·",
@@ -47,7 +47,7 @@
     "·",
     "accessibilité",
     "·",
-    "javascript",
+    "Vous êtes un moteur de traduction professionnel travaillant pour SoyMenu. Traduisez le tableau JSON suivant de textes liés à la nourriture de l'espagnol en 'fr'. Renvoyez uniquement un tableau JSON de chaînes traduites dans le même ordre.",
     "·",
     "typescript",
     "·",
@@ -59,17 +59,17 @@
     "·",
     "next.js",
     "·",
-    "optimisation du référencement naturel",
+    "optimisation du référencement",
     "·",
-    "conception d'interface utilisateur",
+    "conception de l'interface utilisateur",
     "·",
-    "css tailwind",
+    "tailwind css",
     "·",
-    "Intégration d'API",
+    "integration api",
     "·",
     "systèmes d'authentification",
     "·",
-    "prêt pour le CMS",
+    "prêt à consommer",
     "·"
   ],
   "CONTACT_TEXTS": {
@@ -78,14 +78,14 @@
     "section1Title": "Notre vision",
     "section1Body": "Nous croyons que la langue ne devrait pas être un obstacle à l'accès à l'information.",
     "section2Title": "Notre technologie",
-    "section2Body": "Nous utilisons une intelligence artificielle de pointe pour fournir des traductions rapides et précises.",
+    "section2Body": "Nous utilisons une IA de pointe pour fournir des traductions rapides et précises.",
     "section3Title": "Notre équipe",
     "section3Body": "Nous sommes une équipe de développeurs, de linguistes et de designers ayant un objectif commun.",
     "cta": "Vous voulez travailler avec nous ? Contactez-nous !"
   },
   "NAVBAR_TEXTS": {
     "home": "Accueil",
-    "homeDescription": "Retourner à la page d'accueil",
+    "homeDescription": "Retour à la page d'accueil",
     "about": "À propos",
     "aboutDescription": "Apprenez-en plus sur nous",
     "contact": "Contact",
